@@ -8,7 +8,7 @@ description: Cornerstone will select from multiple image rendering pipelines dep
 
 ### Rendering Pipeline Workflow
 
-![Rendering Pipeline](../assets/img/rendering-pipeline.png)
+![Rendering Pipeline]($withBase/assets/img/rendering-pipeline.png)
 
 Rendering path | Description
 ------------------------------------------------------- | -----------------------------

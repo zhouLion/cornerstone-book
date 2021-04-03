@@ -54,7 +54,7 @@ npm test
 ```
 运行测试时，将创建一个“coverage”目录。请注意，因为它只是一个构建生成文件，所以在主代码库中不存在这个目录。通过浏览器打开“coverage/html/index.html”这个 HTML 文件（不必启用一个 HTTP 服务器），您能够查看和检查测试覆盖报告。
 
-![Istanbul Code Coverage Report](../assets/img/istanbul-code-coverage.png)
+![Istanbul Code Coverage Report]($withBase/assets/img/istanbul-code-coverage.png)
 
 当启动了测试之后，您还可以用浏览器访问 http://0.0.0.0:9876/debug ，通过 Karma 测试程序去进行测试的调试。请注意，这个 URL 不会立即生效，因为 `npm test` 命令的第一步是重新构建整个库。
 

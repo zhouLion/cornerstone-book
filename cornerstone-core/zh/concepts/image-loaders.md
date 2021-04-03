@@ -9,7 +9,7 @@ description: Cornerstone allows developers to define their own Image Loaders to 
 
 ## 图像加载器工作流
 
-![图像加载器工作流](../assets/img/image-loader-workflow.png)
+![图像加载器工作流]($withBase/assets/img/image-loader-workflow.png)
 
 1. ImageLoaders register themselves with cornerstone to load specific [ImageId](../image-ids.md) URL schemes
 2. The application requests to load an image using the loadImage() api.

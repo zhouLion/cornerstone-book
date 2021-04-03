@@ -6,7 +6,7 @@ description: Cornerstone is an open source project with a goal to deliver a comp
 
 > Cornerstone is an open source project with a goal to deliver a complete web based medical imaging platform. It provides modular libraries which can be used either together or independently.
 
-![Library Hierarchy](../assets/img/library-hierarchy.png)
+![Library Hierarchy]($withBase/assets/img/library-hierarchy.png)
 
 The central element of the Cornerstone ecosystem is the Cornerstone Core library, commonly referred to just as *Cornerstone*. This is the library that handles the [image rendering pipeline](./rendering-pipeline.md), [loading](./image-loaders.md), [caching](../advanced/image-cache.md), and [viewport transformations](./viewports.md).
 

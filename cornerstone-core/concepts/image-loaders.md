@@ -10,7 +10,7 @@ Since loading images usually requires a call to a server, the API for image load
 
 ## Image Loader Workflow
 
-![Image Loader workflow](../assets/img/image-loader-workflow.png)
+![Image Loader workflow]($withBase/assets/img/image-loader-workflow.png)
 
 1. ImageLoaders register themselves with cornerstone to load specific [ImageId](../image-ids.md) URL schemes
 2. The application requests to load an image using the loadImage() api.

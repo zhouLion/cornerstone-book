@@ -46,7 +46,7 @@ npm test
 ```
 When you run the tests a 'coverage' directory will be created. Note that this directory does not exist in the main repository, since it is solely a build artifact. If you open the HTML file under  'coverage/html/index.html' with a web browser (no HTTP server is required), you will be able to view and examine the test coverage report.
 
-![Istanbul Code Coverage Report](../assets/img/istanbul-code-coverage.png)
+![Istanbul Code Coverage Report]($withBase/assets/img/istanbul-code-coverage.png)
 
 Once you have started the tests, you can also navigate to http://0.0.0.0:9876/debug within a web browser to debug the tests through the Karma test runner. Note that this URL does not work immediately, since the first step in ```npm test``` is to rebuild the library.
 
