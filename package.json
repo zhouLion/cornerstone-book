@@ -1,0 +1,19 @@
+{
+  "name": "cornerstone-book",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:core": "vuepress dev cornerstone-core",
+    "build:core": "vuepress build cornerstone-core"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress": "^1.8.2"
+  }
+}
