@@ -1,7 +1,3 @@
----
-sidebar: auto
----
-
 # Cornerstone
 
 > Cornerstone 是一个开源项目，致力于打造一个基于 web 端的医疗影像平台。
@@ -12,7 +8,11 @@ sidebar: auto
 
 **[发布通知](https://github.com/cornerstonejs/cornerstone/releases)**
 
-该文档旨在作为 Cornerstone 中的概念和 API 的说明书。如果您是新手，我们建议您先查看以下的“概念”部分，然后查看各种“[示例](https://rawgit.com/cornerstonejs/cornerstone/master/example/index.html)”，好好了解 Cornerstone 是怎么使用的。
+该文档旨在作为 Cornerstone 中的概念和 API 的说明书。如果您是新手，我们建议您先查看以下的“概念”部分，然后查看各种<a target="_blank" :href="$withBase('/example/index.html')">在线示例</a>，好好了解 Cornerstone 是怎么使用的。
+
+<h2>
+<a target="_blank" :href="$withBase('/example/index.html')">在线示例</a>
+</h2>
 
 ## [安装](installation.md)
 ## 概念
@@ -36,7 +36,6 @@ sidebar: auto
   - [Legacy Browser Support](advanced/legacy-browser-support.md)
 
 ## [React 集成](integration.md)
-## [在线示例](https://rawgit.com/cornerstonejs/cornerstone/master/example/index.html)
 ## [API](api.md)
-## [贡献榜](contributing.md)
+## [贡献](contributing.md)
 ## [开发者指南](developer-guide.md)

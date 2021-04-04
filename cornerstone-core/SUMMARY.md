@@ -1,7 +1,7 @@
 <div class='row'>
 	<div class='column' style='text-align: right; padding: 0 20px'>
 		<strong>Looking for a Deploy Preview?</strong>
-		<a href="https://rawgit.com/cornerstonejs/cornerstone/master/example/index.html">Deploy Preview for Cornerstone</a>
+		<a href="/example/index.html">Deploy Preview for Cornerstone</a>
 	</div>
 	<div class='column' style='text-align: left; padding: 0 20px'>
 		<a href="https://www.netlify.com">
@@ -20,7 +20,7 @@ While this documentation grows, the [old GitHub wiki](https://github.com/corners
 
 **[Release Notes](https://github.com/cornerstonejs/cornerstone/releases)**
 
-This wiki is intended to be used as a reference for the concepts and APIs in Cornerstone. If you are new to Cornerstone, we recommend that you start by reviewing the concepts below and then looking at the various [examples](https://rawgit.com/cornerstonejs/cornerstone/master/example/index.html) to see how Cornerstone is used.
+This wiki is intended to be used as a reference for the concepts and APIs in Cornerstone. If you are new to Cornerstone, we recommend that you start by reviewing the concepts below and then looking at the various [examples](/example/index.html) to see how Cornerstone is used.
 
 - [Installation](installation.md)
 - Concepts
@@ -43,7 +43,7 @@ This wiki is intended to be used as a reference for the concepts and APIs in Cor
   - [Retrieving Pixel Data](advanced/retrieving-pixel-data.md)
   - [Legacy Browser Support](advanced/legacy-browser-support.md)
 - [Integration With React](integration.md)
-- [Live Examples](https://rawgit.com/cornerstonejs/cornerstone/master/example/index.html)
+- [Live Examples](/example/index.html)
 - [API](api.md)
 - [Contributing](contributing.md)
 - [Developer Guide](developer-guide.md)

@@ -100,7 +100,7 @@ Cornerstone relies on a number of open source tools, components, and free servic
 * [GitBook](https://www.gitbook.com) transforms the Markdown documentation into HTML
 * [Github Pages](https://pages.github.com/) hosts the documentation
 * [Cloudflare](https://www.cloudflare.com/) is placed in front of Github Pages to serve the documentation over HTTPS.
-* [Rawgit](https://rawgit.com/) is used to serve [Live Examples](https://rawgit.com/cornerstonejs/cornerstone/master/example/index.html) from the repository. We should transition this to be hosted with Github Pages as well.
+* [Rawgit](https://rawgit.com/) is used to serve [Live Examples](/example/index.html) from the repository. We should transition this to be hosted with Github Pages as well.
 
 ## Writing tests
 Here are some general notes on writing tests which may be useful:
