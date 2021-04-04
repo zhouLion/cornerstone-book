@@ -1,5 +1,10 @@
+const { zh, en } = require("./nav/index");
+
+const base =  "/cornerstone-book/";
+
+console.log(zh(base));
 module.exports = {
-  base: "/cornerstone-book/",
+  base,
   head: [
     ['link', { rel: 'icon', href: '/logo.png' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
@@ -11,6 +16,10 @@ module.exports = {
     ['meta', { name: 'msapplication-TileImage', content: '/icons/logo512.png.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],
+  extraWatchFiles: [
+    '.vuepress/nav/en.js',
+    '.vuepress/nav/zh.js'
+  ],
   plugins: [
     [
       '@vuepress/pwa', {
@@ -20,6 +29,12 @@ module.exports = {
     ],
     [
       '@vuepress/google-analytics',
+      {
+        'ga': 'G-S95NP6G4YB' // UA-00000000-0
+      }
+    ],
+    [
+      require('./googletagmanager-plugins/ga'),
       {
         'ga': 'G-S95NP6G4YB' // UA-00000000-0
       }
@@ -49,13 +64,13 @@ module.exports = {
         label: '简体中文',
         selectText: '选择语言',
         ariaLabel: '选择语言',
-        nav: require('./nav/zh'),
+        nav: zh(base),
       },
       '/': {
         label: 'English',
         selectText: 'Language',
         ariaLabel: 'Language',
-        nav: require('./nav/en'),
+        nav: en(base),
       }
     }
   }

@@ -1,11 +1,13 @@
-module.exports = [
+const { resolve } = require("path");
+
+module.exports = (base) => ([
     {
         text: "guide",
         link: "/SUMMARY/"
     },
     {
         text: "example",
-        link: '/example/index.html',
+        link: resolve(base, '/example/index.html'),
         rel: "noopener",
         target: "_blank"
     },
@@ -82,4 +84,4 @@ module.exports = [
             }
         ]
     },
-];
+]);
