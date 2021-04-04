@@ -1,5 +1,4 @@
 module.exports = {
-  plugins: ['@vuepress/last-updated'],
   base: "/cornerstone-book/",
   locales: {
     // 键名是该语言所属的子路径
@@ -17,7 +16,6 @@ module.exports = {
   },
 
   themeConfig: {
-    lastUpdated: 'Last Updated',
     sidebar: "auto",
     nav: [
       { text: 'Home', link: '' },
