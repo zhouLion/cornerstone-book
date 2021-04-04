@@ -1,7 +1,7 @@
 ---
 home: true
-heroImage: https://avatars.githubusercontent.com/u/34072764?s=200&v=4
-heroText: Cornerstone 核心
+heroImage: /logo.png
+heroText: Cornerstone
 tagline: web 端医学影像驱动
 actionText: 查看文档
 actionLink: /zh/SUMMARY/
@@ -20,5 +20,3 @@ features:
   details: API支持更改视口属性（例如，ww / wc，缩放，平移，反转）
 footer: 为天朝医疗做💉💉贡献
 ---
-
-
