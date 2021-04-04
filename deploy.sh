@@ -4,7 +4,7 @@
 set -e
 
 # 生成静态文件
-npm run build:core
+yarn build:core
 
 # 进入生成的文件夹
 cd cornerstone-core/.vuepress/dist

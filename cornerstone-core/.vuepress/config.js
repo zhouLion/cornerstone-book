@@ -11,10 +11,20 @@ module.exports = {
     ['meta', { name: 'msapplication-TileImage', content: '/icons/logo512.png.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],
-  plugins: ['@vuepress/pwa', {
-      serviceWorker: true,
-      updatePopup: true
-  }],
+  plugins: [
+    [
+      '@vuepress/pwa', {
+          serviceWorker: true,
+          updatePopup: true
+      }
+    ],
+    [
+      '@vuepress/google-analytics',
+      {
+        'ga': 'G-S95NP6G4YB' // UA-00000000-0
+      }
+    ]
+  ],
   locales: {
     // 键名是该语言所属的子路径
     // 作为特例，默认语言可以使用 '/' 作为其路径。
