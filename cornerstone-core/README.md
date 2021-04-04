@@ -1,16 +1,24 @@
 ---
 home: true
-heroImage: /hero.png
-heroText: Hero 标题
-tagline: Hero 副标题
-actionText: 快速上手 →
+heroImage: /logo.png
+heroText: Cornerstone
+tagline: For Web Based Medical Imaging System
+actionText: Read docs
 actionLink: /SUMMARY/
 features:
-- title: 简洁至上
-  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-- title: Vue驱动
-  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-- title: 高性能
-  details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
-footer: MIT Licensed | Copyright © 2018-present Evan You
+- title: lightweight/modern
+  details: HTML5/Javascript based library to easily add interactive medical images to web applications
+- title: flexible/extensible
+  details: Serves as a foundation to build more complex medical imaging applications from - enterprise viewer, report viewer, etc.
+- title: cross devices
+  details: Supports all HTML5 based browsers including mobile, tablet and desktop
+- title: multipart format
+  details: Displays all common medical image formats (e.g. 8 bit grayscale, 16 bit grayscale, RGB color). Retrieval of images from different systems with different protocols via Image Loader plugin design
+- title: high performance
+  details: High performance image display
+- title: interactive
+  details: API support for changing viewport properties (e.g. ww/wc, zoom, pan, invert)
+footer: Make a little contribution to 🇨🇳 medical cause
 ---
+
+This documentation focuses on Cornerstone Core, which is a lightweight JavaScript library for displaying medical images in modern web browsers that support the HTML5 canvas element. Cornerstone Core is not meant to be a complete application itself, but rather a component that can be used as part of larger, more complex applications.

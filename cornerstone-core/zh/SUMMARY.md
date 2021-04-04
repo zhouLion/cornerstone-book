@@ -8,7 +8,7 @@
 
 **[发布通知](https://github.com/cornerstonejs/cornerstone/releases)**
 
-该文档旨在作为 Cornerstone 中的概念和 API 的说明书。如果您是新手，我们建议您先查看以下的“概念”部分，然后查看各种<a target="_blank" :href="$withBase('/example/index.html')">在线示例</a>，好好了解 Cornerstone 是怎么使用的。
+该文档旨在作为 Cornerstone 中的概念和 API 的说明书。如果您是新手，我们建议您先查看以下的[概念](##概念)部分，然后查看各种<a target="_blank" :href="$withBase('/example/index.html')">在线示例</a>，好好了解 Cornerstone 是怎么使用的。
 
 <h2>
 <a target="_blank" :href="$withBase('/example/index.html')">在线示例</a>
@@ -22,7 +22,7 @@
   - [Viewports - 视口](concepts/viewports.md)
   - [Images - 影像](concepts/images.md)
   - [Pixel Coordinate System - 像素坐标系](concepts/pixel-coordinate-system.md)
-  - [Rendering Loop - 渲染环路](concepts/rendering-loop.md)
+  - [Rendering Loop - 渲染循环](concepts/rendering-loop.md)
   - [Libraries - 相关库](concepts/libraries.md)
   - [Rendering Pipeline - 渲染管道](concepts/rendering-pipeline.md)
   - [Metadata Providers](concepts/metadata-providers.md)

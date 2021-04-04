@@ -40,6 +40,12 @@ module.exports = {
         selectText: '选择语言',
         ariaLabel: '选择语言',
         nav: require('./nav/zh'),
+      },
+      '/': {
+        label: 'English',
+        selectText: 'Language',
+        ariaLabel: 'Language',
+        nav: require('./nav/en'),
       }
     }
   }

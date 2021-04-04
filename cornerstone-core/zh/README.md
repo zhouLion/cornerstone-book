@@ -17,6 +17,9 @@ features:
 - title: 图像展示性能优越
   details: 通过Image Loader插件设计从具有不同协议的不同系统中获取图像
 - title: 可交互性
-  details: API支持更改视口属性（例如，ww / wc，缩放，平移，反转）
-footer: 为天朝医疗做💉💉贡献
+  details: API支持更改视口属性（例如，ww/wc，缩放，平移，反转）
+footer: 为🇨🇳医疗事业做一丢丢贡献
 ---
+
+本文档重点介绍Cornerstone Core，它是一个轻量级JavaScript库，用于在支持HTML5画布元素的现代web浏览器中显示医学图像。基石核心并不是一个完整的应用程序本身，而是一个可以作为更大、更复杂应用程序的一部分使用的组件。
+

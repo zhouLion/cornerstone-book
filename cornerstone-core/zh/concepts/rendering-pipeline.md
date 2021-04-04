@@ -1,16 +1,11 @@
----
-description: Cornerstone will select from multiple image rendering pipelines depending on the Image (e.g. grayscale, color, label map, viewport pseudocolor) type.
----
-
 # Rendering Pipeline
 
 > Cornerstone will select from multiple image rendering pipelines depending on the Image (e.g. grayscale, color, label map, viewport pseudocolor) type.
 
-### Rendering Pipeline Workflow
+## Rendering Pipeline Workflow
+<img :src="$withBase('/assets/img/rendering-pipeline.png')" alt="Rendering Pipeline">
 
-![Rendering Pipeline]($withBase/assets/img/rendering-pipeline.png)
-
-Rendering path | Description
+绘制途径 | 描述
 ------------------------------------------------------- | -----------------------------
 [renderGrayscaleImage](../api.md#rendergrayscaleimage)  | Default rendering pipeline for grayscale images. Includes Modality and VOI LUT transformations.
 [renderPseudoColorImage](../api.md#renderpseudocolorimage) | Used when Viewport **colormap** property is set. This will apply the Pseudocolor LUT transformation to the pixel data following the Modality LUT and VOI LUT transformations.

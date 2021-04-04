@@ -6,11 +6,11 @@
 ## 图像加载器工作流
 
 ![图像加载器工作流](/assets/img/image-loader-workflow.png)
-- 1、ImageLoader 将自己注册到 Cornerstone，去加载特定 [ImageId](../image-ids.md) URL 格式影像
-- 2、程序通过使用 `loadImage()` API 加载一张图像
-- 3、Cornerstone 通过传递给 `loadImage()` 方法的 imageId，找到与之注册的 ImageLoader，委派其加载图像
+- 1、ImageLoader 将自己注册到 Cornerstone，去加载特定 [`ImageId`](../image-ids.md) URL 格式影像
+- 2、程序通过使用 [`loadImage()`](../api.md#loadImage) API 加载一张图像
+- 3、Cornerstone 通过传递给 [`loadImage()`](../api.md#loadImage) 方法的 `imageId` ，找到与之注册的 `ImageLoader` ，委派其加载图像
 - 4、ImageLoader 将返回一个 `Image Load Object - 图像加载对象`，其中包含一个 `promise` 属性，一旦获取到了像素数据，这个 `promise` 将会返回相应的 [Image Object - 影像对象](./images.md)。获取像素数据可能需要经历使用 XMLHttpRequest 调用远程服务器，解压像素数据（如：来自 JPEG 2000 的数据）然后将像素数据转换为 Cornerstone 能够理解的格式（如：RGB vs YBR 色值）。
-- 5、将[Image Object - 影像对象](./images.md) 传给 `Promise` 的 `resolve` 回调，以便于调用 `displayImage()` API 去做展示。
+- 5、将 [Image Object - 影像对象](./images.md) 传给 `Promise` 的 `resolve` 回调，以便于调用 `displayImage()` API 去做展示。
 
 像素数据通常是从服务器上获取的，但也不是一定要这样做。实际上，我们的在线示例中的 ImageLoader 使用的图片，并没有使用服务器去发布。在示例中，图片以 base64 的格式保存在 ImageLoader 中。插件只是简单地将图片从 base64 像素数据转成了像素数组。进一步说，我们可以编写一个可以在客户端生成派生图像的**加载器**。比如，您可以以这种方式实现 [MPR](http://www.xctmr.com/baike/ct/714aae590159663493528de8ab5368b7.html) 功能。
 
@@ -29,7 +29,7 @@ Cornerstone 图像加载器需要返回一个包含 `promise` 的 **Image Load O
 ## 自己写一个图像加载器
 这里的图像加载器的示例，使用 XMLHttpRequest 获取像素数据，然后返回一个包含 Promise 的图像加载对象给 Cornerstone：
 
-````javascript
+```javascript
 function loadImage(imageId) {
     // Parse the imageId and return a usable URL (logic omitted)
     const url = parseImageId(imageId);
@@ -66,13 +66,14 @@ function loadImage(imageId) {
       promise
     };
 }
-````
-Cornerstone 调用 `loadImage()` 方法，入参 [Image Id](./image-ids.md) 会找到对应的图像加载器，让其负责返回一个 **Image Load Object 图像加载对象**。当图像加载对象中的 Promise 解析成功，会返回一张[Image](./images.md)。在图像加载器通过 `registerImageLoader()` API传入给定的 URL 格式进行注册：
+```
+
+Cornerstone 调用 `loadImage()` 方法，入参 [Image Id](./image-ids.md) 会找到对应的图像加载器，让其负责返回一个 **Image Load Object 图像加载对象**。一旦图像加载对象中的 Promise 解析成功，会返回一张[Image](./images.md)。在图像加载器通过 [`registerImageLoader()`](../api.md#registerimageloader) API传入给定的 URL 格式进行注册：
 
 ````javascript
 // Register the url scheme 'myCustomLoader' to correspond to our loadImage function
 cornerstone.registerImageLoader('myCustomLoader', loadImage);
 
 // Images loaded as follows will be passed to our loadImage function:
-cornerstone.loadImage('myCustomLoader://example.com/image.dcm')
+cornerstone.loadImage('myCustomLoader://example.com/image.dcm');
 ````

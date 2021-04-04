@@ -1,13 +1,8 @@
----
-description: The Pixel Coordinate System is used when referring to individual pixels in the image and supports sub-pixel precision.
----
+# 像素坐标系
 
-# Pixel Coordinate System
+像素坐标系用于指代图像中的单个像素，并支持**亚像素精度**。坐标系的原点是这样的：0.0,0.0是图像中左上角像素的左上角，列、行是图像中右下角像素的右下角。因此，坐标为.5，.5是左上角像素的中心。
 
-The Pixel Coordinate System is used when referring to individual pixels in the image and supports sub-pixel precision. The origin of the coordinate system is such that 0.0,0.0 is the top left corner of the top left pixel in the image and columns, rows would be the bottom right corner of the bottom right pixel in the image. A coordinate of .5,.5 is therefore the center of the top left pixel.
-
-1. The function [pageToPixel()](../api.md#pagetopixel) can be used to convert coordinates obtained from browser events to coordinates
-in the pixel coordinate system.
-2. The function [setToPixelCoordinateSystem()](../api.md#settopixelcoordinatesystem) can be used to set the canvas context to the pixel coordinate system.  This is useful when handling the CornerstoneImageRendered event to draw geometry on top of the image.
-3. This coordinate system matches that specified in the DICOM Grayscale Softcopy Presentation State Graphic Annotation module for graphics drawn using the PIXEL annotation units.
-4. Use `Math.ceil()` to convert from the pixel coordinate system to the integer pixel number (for looking up the pixel value in the pixel data).
+- 1、函数 [`pageToPixel`](../api.md#pagetopixel) 可用于将从浏览器事件获得的坐标转换为像素坐标系中的坐标。
+- 2、函数 [`setToPixelCoordinateSystem`](../api.md#settopixelcoordinatesystem) 可用于将画布上下文设置为像素坐标系。这在处理CornerstoneImageRendered事件以在图像顶部绘制几何体时非常有用。
+- 3、此坐标系与DICOM灰度软拷贝表示状态图形注释模块中指定的坐标系相匹配，该模块用于使用像素注释单元绘制的图形。
+- 4、使用 `Math.ceil()` 从像素坐标系转换为整数像素数（用于在像素数据中查找像素值）。

@@ -1,22 +1,18 @@
----
-description: Cornerstone is an open source project with a goal to deliver a complete web based medical imaging platform. It provides modular libraries which can be used either together or independently.
----
+# 相关库
 
-# Libraries
+> Cornerstone 是一项开源项目，旨在搭建一个完备的 web 端医学影像平台。它提供了一些模块化的库，可以结合使用，也可以单独使用。
 
-> Cornerstone is an open source project with a goal to deliver a complete web based medical imaging platform. It provides modular libraries which can be used either together or independently.
+<img :src="$withBase('/assets/img/library-hierarchy.png')" alt="相关库结构">
 
-![Library Hierarchy]($withBase/assets/img/library-hierarchy.png)
+其中 `Cornerstone Core library` 是核心要素，通常称之为 *Cornerstone* ，这个库是用来处理 [图像绘制流水线](./rendering-pipeline.md)、[加载](./image-loaders.md)、 [缓存](../advanced/image-cache.md)以及 [视口变换](./viewports.md)。
 
-The central element of the Cornerstone ecosystem is the Cornerstone Core library, commonly referred to just as *Cornerstone*. This is the library that handles the [image rendering pipeline](./rendering-pipeline.md), [loading](./image-loaders.md), [caching](../advanced/image-cache.md), and [viewport transformations](./viewports.md).
+除了核心库，Cornerstone 开发团队还支持了其它几个库，为开发复杂的影像应用提供生态：
 
-Aside from the core library, there are several other libraries supported by the Cornerstone development team which provide the ecosystem for developing complex imaging applications.
-
-Library                                                          | Description
+库名                                                          | 描述
 -----------------------------------------------------------------|------------
-[Cornerstone Core](https://github.com/cornerstonejs/cornerstone) | Central library providing image rendering, loading, caching, and viewport transformations
-[Cornerstone Tools](https://github.com/cornerstonejs/cornerstoneTools) | Extensible support for building tools, support for mouse, keyboard, and touch devices.
-[Cornerstone WADO Image Loader](https://github.com/cornerstonejs/cornerstoneWADOImageLoader) | Image Loader for DICOM Part 10 files
-[Cornerstone Web Image Loader](https://github.com/cornerstonejs/cornerstoneWebImageLoader) | Image Loader for Web Image files (PNG, JPEG)
-[Cornerstone Math](https://github.com/cornerstonejs/cornerstoneMath) | Mathematical utility functions and classes to support tool development
-[dicomParser](https://github.com/cornerstonejs/dicomParser) | Robust DICOM Part 10 parsing library
+[Cornerstone Core](https://github.com/cornerstonejs/cornerstone) | 用来支持图像绘制、加载、缓存以及视口变换的核心库
+[Cornerstone Tools](https://github.com/cornerstonejs/cornerstoneTools) | 可扩展的工具库，支持鼠标、键盘和触控交互
+[Cornerstone WADO Image Loader](https://github.com/cornerstonejs/cornerstoneWADOImageLoader) | `DICOM Part 10` 文件的图像加载器
+[Cornerstone Web Image Loader](https://github.com/cornerstonejs/cornerstoneWebImageLoader) | Web Image (PNG, JPEG)文件图像加载器
+[Cornerstone Math](https://github.com/cornerstonejs/cornerstoneMath) | 用来支持工具开发的数学工具函数、类库
+[dicomParser](https://github.com/cornerstonejs/dicomParser) | 健壮的 `DICOM Part 10` 格式解析库

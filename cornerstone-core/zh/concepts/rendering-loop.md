@@ -1,14 +1,14 @@
 ---
-description: Viewport (e.g. windowing, pan, zoom) changes for Cornerstone Enabled Elements are updated through a rendering loop based on requestAnimationFrame.
+description: Viewport (e.g. windowing, pan, zoom) changes for Cornerstone Enabled Elements are updated through a 渲染循环 based on requestAnimationFrame.
 ---
 
-# Rendering Loop
+# 渲染循环
 
-> Viewport (e.g. windowing, pan, zoom, etc...) changes for Cornerstone Enabled Elements are updated through a rendering loop based on [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame).
+> Viewport (e.g. windowing, pan, zoom, etc...) changes for Cornerstone Enabled Elements are updated through a 渲染循环 based on [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame).
 
-The rendering loop make use of the [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) (RAF) method in most modern browsers. If RAF is not available, it is shimmed with a 16 ms timer using `setTimeout` and `clearTimeout`.
+The 渲染循环 make use of the [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) (RAF) method in most modern browsers. If RAF is not available, it is shimmed with a 16 ms timer using `setTimeout` and `clearTimeout`.
 
-The rendering loop is enabled on an element-by-element basis when elements are enabled or disabled for use with Cornerstone.
+The 渲染循环 is enabled on an element-by-element basis when elements are enabled or disabled for use with Cornerstone.
 
 The workflow is as follows:
 
@@ -17,7 +17,7 @@ The workflow is as follows:
  3. Once called,
    * if the element was scheduled for re-rendering, it is rendered and [draw()](../api.md#draw) is re-registered with RAF;
    * if the element was **not** scheduled for re-rendering, no work is performed and the callback is re-registered with RAF;
-   * if the element was disabled, the callback is **not** re-registered, ending the rendering loop.
+   * if the element was disabled, the callback is **not** re-registered, ending the 渲染循环.
 
 This means that:
 

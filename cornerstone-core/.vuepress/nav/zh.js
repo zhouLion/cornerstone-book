@@ -5,7 +5,7 @@ module.exports = [
 	},
 	{
 		text: "示例",
-		link: "/example/index.html",
+		link: '/example/index.html',
 		rel: "noopener",
 		target:"_blank"
 	},
