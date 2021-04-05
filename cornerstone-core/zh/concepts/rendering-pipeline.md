@@ -1,14 +1,19 @@
-# Rendering Pipeline
+# Rendering Pipeline - 渲染管道
 
-> Cornerstone will select from multiple image rendering pipelines depending on the Image (e.g. grayscale, color, label map, viewport pseudocolor) type.
+::: tip
 
-## Rendering Pipeline Workflow
-<img :src="$withBase('/assets/img/rendering-pipeline.png')" alt="Rendering Pipeline">
+Cornerstone 将根据图像类型（例如灰度、颜色、标签地图、视口伪彩色）从多个图像渲染管道中进行选择。
+
+:::
+## 渲染管道工作流程
+<img :src="$withBase('/assets/img/rendering-pipeline.png')" alt="渲染管道工作流程">
+
+## 渲染管道类型
 
 绘制途径 | 描述
 ------------------------------------------------------- | -----------------------------
-[renderGrayscaleImage](../api.md#rendergrayscaleimage)  | Default rendering pipeline for grayscale images. Includes Modality and VOI LUT transformations.
-[renderPseudoColorImage](../api.md#renderpseudocolorimage) | Used when Viewport **colormap** property is set. This will apply the Pseudocolor LUT transformation to the pixel data following the Modality LUT and VOI LUT transformations.
-[renderColorImage](../api.md#rendercolorimage) | Default rendering pipeline for color images. Alpha for all pixels are left opaque unless the **rgba** property of the Image is set to **true**.
-[renderWebImage](../api.md#renderwebimage) | Custom rendering pipeline used for images (PNG, JPEG) which have been loaded by the browser. If no VOI LUT transformations (windowWidth, windowCenter, invert) have been applied, the canvas can be drawn directly from the Image **getImage** function.
-[renderLabelMapImage](../api.md#renderlabelmapimage) | Rendering pipeline for label maps. The pseudocolor LUT transform is applied directly to the stored pixel data. No Modality or VOI LUT transformations are applied.
+[renderGrayscaleImage](../api.md#rendergrayscaleimage)  | 灰度图像的默认渲染管道。包括模态和 VOI-LUT 变换。
+[renderPseudoColorImage](../api.md#renderpseudocolorimage) | 设置 **colormap** 属性时使用。这将在模态 LUT 和 VOI-LUT 变换之后对像素数据应用伪彩色LUT变换。
+[renderColorImage](../api.md#rendercolorimage) | 彩色图像的默认渲染管道。所有像素的Alpha都是不透明的，除非图像的 **rgba** 属性设置为true。
+[renderWebImage](../api.md#renderwebimage) | 用于浏览器加载的图像（PNG、JPEG）的自定义渲染管道。如果未应用 VOI-LUT 变换（windowWidth、windowCenter、invert），则可以直接从图像 [`getImage`](../api#getimage) 函数绘制画布。
+[renderLabelMapImage](../api.md#renderlabelmapimage) | 标签贴图的渲染管道。伪彩色 LUT 变换直接应用于存储的像素数据。不应用模态或 VOI-LUT 变换。

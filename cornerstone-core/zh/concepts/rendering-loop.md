@@ -1,28 +1,30 @@
----
-description: Viewport (e.g. windowing, pan, zoom) changes for Cornerstone Enabled Elements are updated through a 渲染循环 based on requestAnimationFrame.
----
+# rendering-loop - 渲染循环
 
-# 渲染循环
+::: tip
 
-> Viewport (e.g. windowing, pan, zoom, etc...) changes for Cornerstone Enabled Elements are updated through a 渲染循环 based on [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame).
+Cornerstone 视口变动 (比如： 开窗、平移、缩放等等)，**Enabled Element - 激活元素** 是依靠基于 [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) 的 **渲染循环** 去做更新的。
 
-The 渲染循环 make use of the [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) (RAF) method in most modern browsers. If RAF is not available, it is shimmed with a 16 ms timer using `setTimeout` and `clearTimeout`.
+:::
 
-The 渲染循环 is enabled on an element-by-element basis when elements are enabled or disabled for use with Cornerstone.
+## 原理说明
+在大多数现代浏览器中，**渲染循环** 使用 [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) (RAF)方法。如果RAF不可用，它将用一个16毫秒的定时器 -- `setTimeout` 和`clearTimeout` 进行微调。
 
-The workflow is as follows:
+在 Cornerstone 中渲染循环功能基于元素启用的。在 Cornerstone 中用 [`enable(element)`](../api#enable) 和 [`disable(element)`](../api#disable) 来启用和禁用元素。
 
- 1. A [draw()](../api.md#draw) callback is registered with RAF;
- 2. [draw()](../api.md#draw) is called by the browser just after a frame is displayed on screen;
- 3. Once called,
-   * if the element was scheduled for re-rendering, it is rendered and [draw()](../api.md#draw) is re-registered with RAF;
-   * if the element was **not** scheduled for re-rendering, no work is performed and the callback is re-registered with RAF;
-   * if the element was disabled, the callback is **not** re-registered, ending the 渲染循环.
+## 工作流程
+工作流成如下：
 
-This means that:
+- 在 RAF 注册 draw() 回调；
+- 在屏幕上显示帧之后，浏览器调用 draw()；
+- 一旦调用
+  - 如果元素计划重新呈现，则它将被呈现并重新向RAF注册 draw()；
+  - 如果元素计划重新呈现，则不执行任何工作，回调将重新注册到 RAF；
+  - 如果元素已经被禁用，回调返回是not重新注册结束渲染循环。
 
-  * [draw()](../api.md#draw) and [invalidate()](../api.md#invalidate) do not trigger immediate rendering of the viewport. Instead, they flag the image as needing re-rendering;
-  * Each cornerstone element registers its own RAF loop;
-  * If the rendering time exceeds 16 ms on a 60 Hz system, rendering frames are skipped;
-  * Only one render per frame is possible, even if render time is much lower than 16 ms;
-  * All interactions (e.g. windowing, pan, zoom, etc...) are combined and rendered in the next frame.
+这意味着:
+
+- cornerstone.draw() 和 cornerstone.invalidate() 不再触发立即渲染视图，而是将图像标记为需要重新呈现；
+- 每个cornerstone 元素注册自己的RAF循环；
+- 如果在一个60赫兹的系统中渲染时间超过16毫秒，则跳过渲染帧；
+- 即使渲染时间远低于16ms，每个帧只能有一个渲染；
+- 所有的交互(平移、缩放等)都被合并并呈现在下一帧中。

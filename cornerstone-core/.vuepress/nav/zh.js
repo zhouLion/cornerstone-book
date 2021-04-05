@@ -1,4 +1,4 @@
-const { resolve } = require("path");
+const { path } = require("@vuepress/shared-utils");
 
 module.exports = (base) => ([
 	{
@@ -7,7 +7,7 @@ module.exports = (base) => ([
 	},
 	{
 		text: "示例",
-		link: resolve(base, '/example/index.html'),
+		link: path.resolve(base, 'example/index.html'),
 		rel: "noopener",
 		target:"_blank"
 	},

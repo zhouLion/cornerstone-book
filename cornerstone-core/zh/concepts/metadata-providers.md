@@ -1,16 +1,15 @@
----
-description: A Metadata Provider is a JavaScript function that acts as an interface for accessing metadata related to Images in Cornerstone.
----
+# Metadata Providers - 元数据供应者
 
-# Metadata Providers
+::: tip
+**Metadata Provider - 元数据供应者** 就是一个 JavaScript 函数，它在 Cornerstone 中的作用是获取与图像有关的元数据。用户可以按他们的想法，自定义 provider 函数，来返回每张指定图像的元数据。
+:::
 
-> A **Metadata Provider** is a JavaScript function that acts as an interface for accessing metadata related to Images in Cornerstone. Users can define their own provider functions in order to return any metadata they wish for each specific image.
+医学影像通常携带许多非像素级别的元数据，就比如图像的像素间距、患者 ID 或者扫描成像日期等。在某些文件（比如：DICOM）中，这些信息保存在文件头部，还可以读取、解析并且在你的应用程序中传递。还有一些文件（比如：JPEG、PNG），这些信息需要于像素数据之外单独提供。然而，即便是 DICOM 这样的图像，开发人员提供的单独的元数据，这些元数据与从服务器上获取的图像的像素数据分离开来。这是因为这样往往能够提升新能。
 
-Medical images typically come with lots of non-pixel-wise metadata such as for example, the pixel spacing of the image, the patient ID, or the scan acquisition date. With some file types (e.g. DICOM), this information is stored within the file header and can be read and parsed and passed around your application. With others (e.g. JPEG, PNG), this information needs to be provided independently from the actual pixel data. Even for DICOM images, however, it is common for application developers to provide metadata independently from the transmission of pixel data from the server to the client since this can considerably improve performance.
+为了应付这中场景，Cornerstone 为定义和使用 *Metadata Providers - 元数据供应者*
+铺好了路。`Metadata Providers` 是一个简单的函数，它接收一个 [Image Id](image-ids.md) 和指定的元数据类型, 返回值就是元数据本身。
 
-To handle these scenarios, Cornerstone provides infrastructure for the definition and usage of *Metadata Providers*. Metadata Providers are simply functions which take in an [Image Id](image-ids.md) and specified metadata type, and return the metadata itself.
-
-Here is a simple example of a Metadata Provider which returns an Object containing Image Plane metadata for a single specific image (Image Id: 'ct://1'):
+这里一个元数据供应者简单示例，它返回一个张指定图像(Image Id: 'ct://1')的图像平面元数据对象:
 
 ````javascript
 function metaDataProvider(type, imageId) {
@@ -42,17 +41,19 @@ function metaDataProvider(type, imageId) {
   }
 }
 
-// Register this provider with CornerstoneJS
+// 在 Cornerstone 上注册供应者
 cornerstone.metaData.addProvider(metaDataProvider);
 
-// Retrieve this metaData
+// 接收元数据
 var imagePlaneModule = cornerstone.metaData.get('imagePlaneModule', 'ct://1');
 ````
 
-## Basics
-  * Cornerstone allows for the registration of multiple Metadata Providers.
-  * Each provider can provide whichever information the developer desires.
-  * When a request is made for metadata for an image, Cornerstone will iterate through the known providers until it retrieves a defined set of metadata for the specified metadata type.
-  * Providers can be added to Cornerstone with an optional priority value in order to influence the order in which they are called.
-  * When DICOM images are loaded by [Cornerstone WADO Image Loader](https://github.com/cornerstonejs/cornerstoneWADOImageLoader), their metadata will be parsed and added to a metadata provider automatically.
-  * Within [Cornerstone Tools](https://github.com/cornerstonejs/cornerstoneTools), specific metadata types are used to provide metadata for tools.
+## 相关 API
+元数据供应者相关 API 可参见 [cornerstone.metaData](../api.md#metadata)
+## 基本说明
+  * Cornerstone 允许注册多个元数据供应者；
+  * 每个供应者都可以按开发者意愿，提供任意想要的信息数据；
+  * 一旦一张图像发起元数据请求，Cornerstone 就从已知的供应者中遍历，直至取到对应的元数据类型的元数据集；
+  * [`cornerstone.metaData.addProvider`](../api.md#metadata) 接收第二个参数标识调用优先级，用来控制 Cornerstone 遍历供应者的优先顺序；
+  * 当使用[Cornerstone WADO Image Loader](https://github.com/cornerstonejs/cornerstoneWADOImageLoader)加载 DICOM 图像，它们的元数据将被解析并自动添加到一个元数据供应者；
+  * 在 [Cornerstone Tools](https://github.com/cornerstonejs/cornerstoneTools) 中, 由特定的元数据类型为工具提供元数据。

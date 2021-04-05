@@ -1,13 +1,8 @@
----
-description: Each Enabled Element has a Viewport which describes how the Image should be rendered.
----
+# Viewports - 视口
 
-# Viewports
+每个 [Enabled Element - 激活元素](enabled-elements.md) 都有一个 viewport ，描述如何呈现图像。可以通过 [`getViewport()`](../api.md#getviewport) 函数获得启用元素的 viewport，并使用 [`setViewport()`](../api.md#setviewport) 函数进行设置。视窗的参数是可以参见 (viewport API 文档)(../api.md#viewport)
 
-> Each [Enabled Element](enabled-elements.md) has a **[Viewport](../api.md#viewport)** which describes how the [Image](images.md) should be rendered.
-
-The viewport parameters for an enabled element can be obtained via the [getViewport()](../api.md#getviewport) function and set using the [setViewport()](../api.md#setviewport) function. The available properties for the Viewport can be found in the [Viewport object definition](../api.md#viewport) in the API documentation.
-
+## 在线示例
 
 <p data-height="500"
    data-theme-id="dark"

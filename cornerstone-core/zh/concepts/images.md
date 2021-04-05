@@ -45,5 +45,4 @@ Type: [Object]
 -   `cachedLut` **[Object]** Cached Lookup Table for this image.
 -   `colormap` **([String] | Colormap)?** Depreacted. Use viewport.colormap instead. an optional colormap ID or colormap object (from colors/colormap.js). This will be applied during rendering to convert the image to pseudocolor
 -   `labelmap` **[Boolean]?** whether or not to render this image as a label map (i.e. skip modality and VOI LUT pipelines and use only a color lookup table)
-
 :::

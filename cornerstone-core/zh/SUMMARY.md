@@ -25,7 +25,7 @@
   - [Rendering Loop - 渲染循环](concepts/rendering-loop.md)
   - [Libraries - 相关库](concepts/libraries.md)
   - [Rendering Pipeline - 渲染管道](concepts/rendering-pipeline.md)
-  - [Metadata Providers](concepts/metadata-providers.md)
+  - [Metadata Providers - 元数据供应者](concepts/metadata-providers.md)
 ### 进阶概念
   - [Image Cache](advanced/image-cache.md)
   - [Enabled Element Layers](advanced/enabled-element-layers.md)

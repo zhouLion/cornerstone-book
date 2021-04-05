@@ -1,8 +1,6 @@
 const { zh, en } = require("./nav/index");
-
 const base =  "/cornerstone-book/";
 
-console.log(zh(base));
 module.exports = {
   base,
   head: [
@@ -25,12 +23,6 @@ module.exports = {
       '@vuepress/pwa', {
           serviceWorker: true,
           updatePopup: true
-      }
-    ],
-    [
-      '@vuepress/google-analytics',
-      {
-        'ga': 'G-S95NP6G4YB' // UA-00000000-0
       }
     ],
     [

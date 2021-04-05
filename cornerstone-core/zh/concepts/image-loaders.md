@@ -5,7 +5,8 @@
 
 ## 图像加载器工作流
 
-![图像加载器工作流](/assets/img/image-loader-workflow.png)
+<img :src="$withBase('/assets/img/image-loader-workflow.png')" alt="图像加载器工作流">
+
 - 1、ImageLoader 将自己注册到 Cornerstone，去加载特定 [`ImageId`](../image-ids.md) URL 格式影像
 - 2、程序通过使用 [`loadImage()`](../api.md#loadImage) API 加载一张图像
 - 3、Cornerstone 通过传递给 [`loadImage()`](../api.md#loadImage) 方法的 `imageId` ，找到与之注册的 `ImageLoader` ，委派其加载图像
