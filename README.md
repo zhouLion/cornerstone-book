@@ -14,7 +14,7 @@
 <a target="_blank" href="cornerstone-core/.vuepress/public/example/index.html">在线示例</a>
 </h2>
 
-## [安装](installation.md)
+## [安装](cornerstone-core/zh/installation.md)
 ## 概念
   - [Enabled Element - 激活元素](cornerstone-core/zh/concepts/enabled-elements.md)
   - [Image Ids - 图片标识](cornerstone-core/zh/concepts/image-ids.md)
