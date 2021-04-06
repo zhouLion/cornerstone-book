@@ -27,7 +27,7 @@
   - [Rendering Pipeline - 渲染管道](concepts/rendering-pipeline.md)
   - [Metadata Providers - 元数据供应者](concepts/metadata-providers.md)
 ### 进阶概念
-  - [Image Cache](advanced/image-cache.md)
+  - [Image Cache - 图像缓存](advanced/image-cache.md)
   - [Enabled Element Layers](advanced/enabled-element-layers.md)
   - [Modality LUT and VOI LUT](advanced/modality-lut-and-voi-lut.md)
   - [Color Lookup Tables](advanced/color-lookup-tables.md)
