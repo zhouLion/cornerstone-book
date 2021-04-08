@@ -1,2 +1,4 @@
 node_modules/
-cornerstome-core/.vuepress/dist
+cornerstone-core/.vuepress/dist
+
+cornerstone-tools-src

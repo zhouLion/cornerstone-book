@@ -10,13 +10,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "sh deploy.sh",
     "dev:core": "vuepress dev cornerstone-core",
-    "build:core": "vuepress build cornerstone-core"
+    "build:core": "vuepress build cornerstone-core",
+    "gen:cstools-api": "docma --config ./docma.json"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@vuepress/plugin-google-analytics": "^1.8.2",
     "@vuepress/plugin-pwa": "^1.8.2",
+    "docma": "^3.2.2",
     "vuepress": "^1.8.2"
   }
 }

@@ -2,7 +2,7 @@ const { path } = require("@vuepress/shared-utils");
 
 const toolsVersionItem = (version, base) => ({
 	text: version,
-	link: path.resolve(base, `/cornerstone-tools/${version}/SUMMARY`),
+	link: path.resolve(base, `cornerstone-tools/${version}/SUMMARY`),
 	rel: "noopener",
 	target: "_blank"
 });
@@ -13,10 +13,21 @@ module.exports = (base) => ([
 		link: "/SUMMARY/"
 	},
 	{
-		text: "example",
-		link: path.resolve(base, 'example/index.html'),
-		rel: "noopener",
-		target: "_blank"
+		text: "examples",
+		items: [
+		{
+			text: "cornerstone",        
+			link: path.resolve(base, 'example/index.html'),
+			rel: "noopener",
+			target:"_blank"
+		},
+		{
+			text: "cornerstoneTools",        
+			link: path.resolve(base, 'cst-examples/index.html'),
+			rel: "noopener",
+			target:"_blank"
+		},
+		],
 	},
 	{
 		text: "API",
