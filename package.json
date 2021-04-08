@@ -9,8 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "sh deploy.sh",
-    "dev:core": "vuepress dev cornerstone-core",
-    "build:core": "vuepress build cornerstone-core",
+    "dev:doc": "vuepress dev cornerstone-doc",
+    "build:doc": "vuepress build cornerstone-doc",
     "gen:cstools-api": "docma --config ./docma.json"
   },
   "author": "",

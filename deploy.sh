@@ -7,7 +7,7 @@ set -e
 yarn build:core
 
 # 进入生成的文件夹
-cd cornerstone-core/.vuepress/dist
+cd cornerstone-doc/.vuepress/dist
 
 git init
 git add -A
