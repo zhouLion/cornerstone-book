@@ -4,7 +4,7 @@
 set -e
 
 # 生成静态文件
-yarn build:core
+yarn build:doc
 
 # 进入生成的文件夹
 cd cornerstone-doc/.vuepress/dist

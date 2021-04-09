@@ -56,6 +56,6 @@
 ## Misc
 
 - [Debugging](debugging/index.md)
-- [API](api)
+- <a href="/cornerstone-book/cornerstone-tools/latest/api">API</a>
 - 3rd Party Tool Directory _coming soon_
 - Custom Tool Example Repositories _coming soon_

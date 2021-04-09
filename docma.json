@@ -2,11 +2,11 @@
   "src": [
     "./cornerstone-tools-src/**/*.js"
   ],
-  "dest": "./cornerstone-core/cornerstone-tools/latest/api",
+  "dest": "./cornerstone-doc/.vuepress/public/cornerstone-tools/latest/api",
   "app": {
     "title": "Cornerstone Tools: API Docs",
     "routing": "query",
-    "base": "/api",
+    "base": "/cornerstone-book/cornerstone-tools/latest/api",
     "server": "github"
   },
   "jsdoc": {
