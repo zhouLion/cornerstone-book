@@ -73,4 +73,27 @@
     // register our imageLoader plugin with cornerstone
     cs.registerImageLoader('example', getExampleImage);
 
+// @ts-ignore
 }(cornerstone));
+
+~(function (global, doc, tag, src, script, m) {
+    script = doc.createElement(tag)
+    m = doc.getElementsByTagName(tag)[0]
+    script.async = 1
+    script.src = src
+    m.parentNode.insertBefore(script, m)
+    // @ts-ignore
+    global.dataLayer = global.dataLayer || [];
+    // @ts-ignore
+    if (!global.gtag) {
+        // @ts-ignore
+        global.gtag = function gtag(){
+            // @ts-ignore
+            global.dataLayer.push(arguments);
+        }
+        // @ts-ignore
+        global.gtag('js', new Date());
+        // @ts-ignore
+        global.gtag('config', "G-S95NP6G4YB");
+    }
+}(window, document, 'script', 'https://www.googletagmanager.com/gtag/js?id=' + "G-S95NP6G4YB"))
