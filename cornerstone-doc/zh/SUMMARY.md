@@ -30,9 +30,9 @@
   - [Image Cache - 图像缓存](advanced/image-cache.md)
   - [Enabled Element Layers](advanced/enabled-element-layers.md)
   - [Modality LUT and VOI LUT](advanced/modality-lut-and-voi-lut.md)
-  - [Color Lookup Tables](advanced/color-lookup-tables.md)
-  - [WebGL Rendering Pipeline](advanced/webgl-rendering-pipeline.md)
-  - [Retrieving Pixel Data](advanced/retrieving-pixel-data.md)
+  - [Color Lookup Tables - 色值检索表](advanced/color-lookup-tables.md)
+  - [WebGL Rendering Pipeline - WebGL 绘制管道](advanced/webgl-rendering-pipeline.md)
+  - [Retrieving Pixel Data - 取出像素数据](advanced/retrieving-pixel-data.md)
   - [Legacy Browser Support](advanced/legacy-browser-support.md)
 
 ## [React 集成](integration.md)

@@ -1,7 +1,3 @@
----
-description: Developers can define their own Color Lookup Tables for displaying grayscale images with false color maps.
----
+# Color Lookup Tables - 色值检索表
 
-# Color Lookup Tables
-
-> Developers can define their own **Color Lookup Tables** for displaying grayscale images with false color maps.
+> 开发人员可以定义自己的**色值检索表**来显示带有假彩色贴图的灰度图像。

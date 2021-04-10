@@ -1,10 +1,6 @@
----
-description: Cornerstone supports retrieval of stored and transformed pixels from Images.
----
+# Retrieving Pixel Data - 取出像素数据
 
-# Retrieving Pixel Data
-
-> Cornerstone supports retrieval of stored and transformed pixels from Images.
+> Cornerstone 支持从图像中取回保存过和转换过的像素。
 
 * [getPixels](../api.md#getpixels)
 * [getStoredPixels](../api.md#getstoredpixels)
