@@ -1,15 +1,14 @@
-# Installation
+# 安装
 
-### Compatibility Note
+## 兼容性
 
-CornerstoneTools.js does not support IE8 and below because it uses ECMAScript 5 features that are un-shimmable in IE8. However it supports all [ECMAScript 5 compliant browsers](https://caniuse.com/#feat=es5).
+CornerstoneTools.js 不支持 IE8 及其以下的版本，因为它使用了 IE8 不兼容且无法被模拟的 ECMAScript 新特性。它支持 [遵循 ECMAScript 5 标准的现代浏览器](https://caniuse.com/#feat=es5).
 
-### Release Notes
+## 发布通知
+我们是一个小团队，所以我们的文档可能并不总是100%准确。请随时创建一个 issue 和/或 PR 以更新我们的文件。
 
-We're a small team, so our docs may not always be 100% accurate. Please feel free to create an issue and/or PR a change to update our docs.
-
-- Latest stable version: `@latest` 2.3.9
-- Latest beta version: `@next` 3.0.0-b.1003
+- 最新稳定版本 `@latest` 2.3.9
+- 最新测试版本: `@next` 3.0.0-b.1003
 
 You can find the latest versions for each tag by clicking the `versions` tab for [the cornerstone-tools npm listing](https://www.npmjs.com/package/cornerstone-tools)
 
@@ -19,7 +18,7 @@ Detailed release notes for each version are available on GitHub.
 
 Simply download and include with a script tag. `CornerstoneTools` will be registered as a global variable.
 
-### CDN
+## CDN
 
 We recommend linking to a specific version number that you can update manually:
 
@@ -54,7 +53,7 @@ In the `dist/` [directory of the NPM package](https://cdn.jsdelivr.net/npm/corne
 | CommonJS         | `cornerstone-tools.common.js` | _(coming soon)_ |
 | ES Module        | `cornerstone-tools.esm.js`    | _(coming soon)_ |
 
-### Terms
+## Terms
 
 - [UMD](https://github.com/umdjs/umd): UMD builds can be used directly in the browser via a `<script>` tag. The default file from jsDelivr CDN at https://cdn.jsdelivr.net/npm/cornerstone-tools is the UMD build (cornerstone-tools.js).
 

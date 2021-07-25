@@ -2,3 +2,4 @@ node_modules/
 cornerstone-doc/.vuepress/dist
 
 cornerstone-tools-src
+cornerstone-tools

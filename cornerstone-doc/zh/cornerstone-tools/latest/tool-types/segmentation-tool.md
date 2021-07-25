@@ -1,14 +1,13 @@
-## Segmentation Tools {#segmentation-tool}
+## 图像分割工具基础类 Segmentation Tool
 
-"Segmentation Tools" are derivatives of `BaseTool` that interact with the labelmap layer in some way other than by manually brushing, for which you would choose to derive from `BaseBrushTool`.
+"Segmentation Tools" 是 `BaseTool` 的派生类， that interact with the labelmap layer in some way other than by manually brushing, for which you would choose to derive from `BaseBrushTool`.
 
 ### Anatomy
+图像分割工具是一个模块化设计模式，而非一个工具类，同时它是功能的组合，而非继承。
 
-Segmentation Tools are more of a modular design pattern rather than a tool type, and so are constructed via composition rather than inheritance.
+`SegmentationTool` 是通过一些组件组合而成的：
 
-`SegmentationTool`s are comprised of a few components:
-
-- A [Segmentation Mixin](../tool-mixins/index.md#segmentation-mixins) - The role of a segmentation mixin is to provide a delineation mechanism, which generates an `operationData` object which is passed to the active strategy alongside the cornerstone event.
+-  [Segmentation Mixin](../tool-mixins/index.md#segmentation-mixins) - The role of a segmentation mixin is to provide a delineation mechanism, which generates an `operationData` object which is passed to the active strategy alongside the cornerstone event.
 - One or more `strategies` to be called when the segmentation mixin calls `this.applyActiveStrategy(evt, operationData)`.
 - An (optional) set of `cursors` for `strategies`.
 

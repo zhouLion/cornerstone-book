@@ -1,6 +1,6 @@
-## Base Annotation Tool {#base-annotation-tool}
+## 标绘-基类 BaseAnnotationTool
 
-The `BaseAnnotationTool` is an extension of `BaseTool` for Tools that create and manipulate annotation data.
+`BaseAnnotationTool` 是 `BaseTool` 的扩展类。为了开发工具以创建和修改标绘数据。
 
 - Abstract Methods:
   - `createNewMeasurement`
