@@ -1,9 +1,10 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <!-- support for mobile touch devices -->
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <!-- twitter bootstrap CSS stylesheet - not required by cornerstoneTools -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
@@ -13,18 +14,22 @@
     <style>
         /* prevents selection when left click dragging */
         .disable-selection {
-            -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
+
         /* prevents cursor from changing to the i bar on the overlays*/
         .noIbar {
-            cursor:default;
+            cursor: default;
         }
     </style>
 </head>
 
 <script>
     if (typeof CustomEvent === 'undefined') {
-        CustomEvent = function(type, eventInitDict) {
+        CustomEvent = function (type, eventInitDict) {
             var event = document.createEvent('CustomEvent');
             event.initCustomEvent(type, eventInitDict['bubbles'], eventInitDict['cancelable'], eventInitDict['detail']);
             return event;
@@ -33,75 +38,72 @@
 </script>
 
 <body>
-<div class="container">
-   <div class="page-header">
-        <h2>
-            Touch Tools Example
-        </h2>
-        <p>
-            This page contains an example of all the touch-capable tools. <strong>Load this on a mobile device.</strong>
-        </p>
-        <a href="../index.html">Go back to the Examples page</a>
-    </div>
+    <div class="container">
+        <div class="page-header">
+            <h2>
+                Touch Tools Example
+            </h2>
+            <p>
+                This page contains an example of all the touch-capable tools. <strong>Load this on a mobile
+                    device.</strong>
+            </p>
+            <a href="../index.html">Go back to the Examples page</a>
+        </div>
 
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-xs-12 col-md-offset-0">
-            <div class="dropdown">
-                <button id="toolSelector" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select tool <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-header">Tools</li>
-                    <li><a id="enableWindowLevelTool" class="list-group-item">WW/WC</a></li>
-                    <li><a id="pan" class="list-group-item">Pan</a></li>
-                    <li><a id="rotate" class="list-group-item">Rotate</a></li>
-                    <li><a id="zoom" class="list-group-item">Zoom (pinch)</a></li>
-                    <li><a id="zoomDrag" class="list-group-item">Zoom (drag)</a></li>
-                    <li><a id="stackScroll" class="list-group-item">Stack Scroll</a></li>
-                    <li><a id="length" class="list-group-item">Length</a></li>
-                    <li><a id="probe" class="list-group-item">Probe</a></li>
-                    <li><a id="circleroi" class="list-group-item">Ellipse</a></li>
-                    <li><a id="rectangleroi" class="list-group-item">Rectangle</a></li>
-                    <li><a id="angle" class="list-group-item">Angle</a></li>
-                </ul>
-                <a id="clearToolData" class="btn btn-secondary">Clear Tools</a>
-                <a id="resetViewport" class="btn btn-secondary">Reset View</a>
-                <a id="fullscreen" class="btn btn-secondary">Fullscreen</a>
-            </div>
-        </div>
-    </div>
-    <br/>
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-xs-10 col-xs-offset-1 col-md-offset-0">
-            <div style="width:100%;height:100%;min-height:256px;min-width:256px;position:relative;display:inline-block;color:white;"
-                 oncontextmenu="return false"
-                 class='cornerstone-enabled-image'
-                 unselectable='on'
-                 onselectstart='return false;'
-                 onmousedown='return false;'>
-                <div id="dicomImage"
-                     style="width:100%;height:100%;min-height:256px;min-width:256px;">
-                </div>
-                <div id="mrtopleft" style="position: absolute;top:3px; left:3px">
-                    Patient Name
-                </div>
-                <div id="mrtopright" style="position: absolute;top:3px; right:3px">
-                    Hospital
-                </div>
-                <div id="mrbottomright" style="position: absolute;bottom:3px; right:3px">
-                    Zoom:
-                </div>
-                <div id="mrbottomleft" style="position: absolute;bottom:3px; left:3px">
-                    WW/WC:
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xs-12 col-md-offset-0">
+                <div class="dropdown">
+                    <button id="toolSelector" class="btn btn-primary dropdown-toggle" type="button"
+                        data-toggle="dropdown">Select tool <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Tools</li>
+                        <li><a id="enableWindowLevelTool" class="list-group-item">WW/WC</a></li>
+                        <li><a id="pan" class="list-group-item">Pan</a></li>
+                        <li><a id="rotate" class="list-group-item">Rotate</a></li>
+                        <li><a id="zoom" class="list-group-item">Zoom (pinch)</a></li>
+                        <li><a id="zoomDrag" class="list-group-item">Zoom (drag)</a></li>
+                        <li><a id="stackScroll" class="list-group-item">Stack Scroll</a></li>
+                        <li><a id="length" class="list-group-item">Length</a></li>
+                        <li><a id="probe" class="list-group-item">Probe</a></li>
+                        <li><a id="circleroi" class="list-group-item">Ellipse</a></li>
+                        <li><a id="rectangleroi" class="list-group-item">Rectangle</a></li>
+                        <li><a id="angle" class="list-group-item">Angle</a></li>
+                    </ul>
+                    <a id="clearToolData" class="btn btn-secondary">Clear Tools</a>
+                    <a id="resetViewport" class="btn btn-secondary">Reset View</a>
+                    <a id="fullscreen" class="btn btn-secondary">Fullscreen</a>
                 </div>
             </div>
         </div>
-    </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xs-10 col-xs-offset-1 col-md-offset-0">
+                <div style="width:100%;height:100%;min-height:256px;min-width:256px;position:relative;display:inline-block;color:white;"
+                    oncontextmenu="return false" class='cornerstone-enabled-image' unselectable='on'
+                    onselectstart='return false;' onmousedown='return false;'>
+                    <div id="dicomImage" style="width:100%;height:100%;min-height:256px;min-width:256px;">
+                    </div>
+                    <div id="mrtopleft" style="position: absolute;top:3px; left:3px">
+                        Patient Name
+                    </div>
+                    <div id="mrtopright" style="position: absolute;top:3px; right:3px">
+                        Hospital
+                    </div>
+                    <div id="mrbottomright" style="position: absolute;bottom:3px; right:3px">
+                        Zoom:
+                    </div>
+                    <div id="mrbottomleft" style="position: absolute;bottom:3px; left:3px">
+                        WW/WC:
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 <!-- TODO: Switch to a Select element -->
 <!-- Latest compiled and minified JavaScript for Bootstrap and Jquery (only for the dropdown) -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
-        crossorigin="anonymous"></script>
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
@@ -117,8 +119,8 @@
 <script src="../cornerstoneMath.min.js"></script>
 
 <!-- include the cornerstone tools library -->
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
@@ -141,7 +143,7 @@
     ];
 
     var stack = {
-        currentImageIdIndex : 0,
+        currentImageIdIndex: 0,
         imageIds: imageIds
     };
 
@@ -163,22 +165,22 @@
     });
 
     var fullScreenEventTypes = ['webkitfullscreenchange', 'mozfullscreenchange', 'fullscreenchange'];
-    fullScreenEventTypes.forEach(function(eventType) {
-      document.addEventListener(eventType, function() {
-        if (!document.fullscreenElement && !document.mozFullScreenElement &&
-          !document.webkitFullscreenElement && !document.msFullscreenElement) {
-          container.offsetWidth = 256;
-          container.offsetHeight = 256;
-          element.offsetWidth = 256;
-          element.offsetHeight = 256;
-        } else {
-          container.offsetWidth = window.outerWidth;
-          container.offsetHeight = window.outerHeight;
-          element.offsetWidth = container.offsetWidth;
-          element.offsetHeight = container.offsetHeight;
-        }
-        cornerstone.resize(element, true);
-      });
+    fullScreenEventTypes.forEach(function (eventType) {
+        document.addEventListener(eventType, function () {
+            if (!document.fullscreenElement && !document.mozFullScreenElement &&
+                !document.webkitFullscreenElement && !document.msFullscreenElement) {
+                container.offsetWidth = 256;
+                container.offsetHeight = 256;
+                element.offsetWidth = 256;
+                element.offsetHeight = 256;
+            } else {
+                container.offsetWidth = window.outerWidth;
+                container.offsetHeight = window.outerHeight;
+                element.offsetWidth = container.offsetWidth;
+                element.offsetHeight = container.offsetHeight;
+            }
+            cornerstone.resize(element, true);
+        });
     });
 
     var onResize = function () {
@@ -198,13 +200,13 @@
     cornerstone.enable(element);
 
     var configuration = {
-        testPointers: function(eventData) {
+        testPointers: function (eventData) {
             return (eventData.numPointers >= 3);
         }
     };
     cornerstoneTools.panMultiTouch.setConfiguration(configuration);
 
-    cornerstone.loadImage(imageIds[0]).then(function(image) {
+    cornerstone.loadImage(imageIds[0]).then(function (image) {
         cornerstone.displayImage(element, image);
 
         // Set the stack as tool state
@@ -212,7 +214,7 @@
         cornerstoneTools.addToolState(element, 'stack', stack);
 
         cornerstoneTools.touchInput.enable(element);
-      
+
         // Enable all tools we want to use with this element
         cornerstoneTools.zoomTouchPinch.activate(element);
         //cornerstoneTools.rotateTouch.activate(element);
@@ -293,7 +295,7 @@
             cornerstoneTools.angleTouch.activate(element);
             toolSelector.textContent = e.currentTarget.innerHTML
         });
-        document.getElementById('clearToolData').addEventListener('click', function() {
+        document.getElementById('clearToolData').addEventListener('click', function () {
             disableAllTools();
             cornerstoneTools.wwwcTouchDrag.activate(element);
             cornerstoneTools.zoomTouchPinch.activate(element);
@@ -305,10 +307,11 @@
             toolStateManager.clear(element);
             cornerstone.updateImage(element);
         });
-        document.getElementById('resetViewport').addEventListener('click', function() {
+        document.getElementById('resetViewport').addEventListener('click', function () {
             cornerstone.reset(element);
         });
     });
 
 </script>
+
 </html>

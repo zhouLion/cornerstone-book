@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <!-- support for mobile touch devices -->
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,58 +11,53 @@
     <link href="../cornerstone.min.css" rel="stylesheet">
 
 </head>
+
 <body>
-<div class="container">
-    <div class="page-header">
-        <h1>
-            Application State Save / Restore example
-        </h1>
-        <p>
-            This page contains an example of saving and restoring application states
-        </p>
-        <a href="../index.html">Go back to the Examples page</a>
-    </div>
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                Application State Save / Restore example
+            </h1>
+            <p>
+                This page contains an example of saving and restoring application states
+            </p>
+            <a href="../index.html">Go back to the Examples page</a>
+        </div>
 
-    <div class="row">
-        <div class="col-xs-2">
-            <ul class="list-group">
-                <a id="save" class="list-group-item">Save</a>
-                <a id="restore" class="list-group-item">Restore</a>
-            </ul>
+        <div class="row">
+            <div class="col-xs-2">
+                <ul class="list-group">
+                    <a id="save" class="list-group-item">Save</a>
+                    <a id="restore" class="list-group-item">Restore</a>
+                </ul>
 
-            <div class="savedState">
-                <select>
-                    <option value='{"imageIdToolState":{"example://2":{"probe":{"data":[{"visible":true,"active":false,"handles":{"end":{"x":64.035618869664,"y":21.05592153169944,"highlight":true,"active":false}},"invalidated":true},{"visible":true,"active":false,"handles":{"end":{"x":65.59724509573118,"y":116.31512132179843,"highlight":true,"active":false}},"invalidated":true}]}}},"elementToolState":{"axial1":{"stack":{"data":[{"currentImageIdIndex":1,"imageIds":["example://1","example://2"]}]}},"axial2":{"stack":{"data":[{"currentImageIdIndex":1,"imageIds":["example://1","example://2"]}]}}},"elementViewport":{"axial1":{"scale":0.6403580980567946,"translation":{"x":-31.53882275758602,"y":-3.931383582470403},"voi":{"windowWidth":256,"windowCenter":127},"pixelReplication":false,"rotation":0,"hflip":false,"vflip":false},"axial2":{"scale":1,"translation":{"x":0,"y":0},"voi":{"windowWidth":256,"windowCenter":127},"pixelReplication":false,"rotation":0,"hflip":false,"vflip":false}}}' checked>Example 1: Probe points</option>
-                    <!--TODO: Recreate this, it's now incompatible
+                <div class="savedState">
+                    <select>
+                        <option
+                            value='{"imageIdToolState":{"example://2":{"probe":{"data":[{"visible":true,"active":false,"handles":{"end":{"x":64.035618869664,"y":21.05592153169944,"highlight":true,"active":false}},"invalidated":true},{"visible":true,"active":false,"handles":{"end":{"x":65.59724509573118,"y":116.31512132179843,"highlight":true,"active":false}},"invalidated":true}]}}},"elementToolState":{"axial1":{"stack":{"data":[{"currentImageIdIndex":1,"imageIds":["example://1","example://2"]}]}},"axial2":{"stack":{"data":[{"currentImageIdIndex":1,"imageIds":["example://1","example://2"]}]}}},"elementViewport":{"axial1":{"scale":0.6403580980567946,"translation":{"x":-31.53882275758602,"y":-3.931383582470403},"voi":{"windowWidth":256,"windowCenter":127},"pixelReplication":false,"rotation":0,"hflip":false,"vflip":false},"axial2":{"scale":1,"translation":{"x":0,"y":0},"voi":{"windowWidth":256,"windowCenter":127},"pixelReplication":false,"rotation":0,"hflip":false,"vflip":false}}}'
+                            checked>Example 1: Probe points</option>
+                        <!--TODO: Recreate this, it's now incompatible
                     <option value='{"imageIdToolState":{"example://1":{"length":{"data":[{"visible":true,"active":false,"handles":{"start":{"x":159.84375,"y":87,"highlight":true,"active":true},"end":{"x":137.84375,"y":100,"highlight":true,"active":false}},"invalidated":true},{"visible":true,"active":false,"handles":{"start":{"x":103.84375,"y":66,"highlight":true,"active":false},"end":{"x":90.84375,"y":148,"highlight":true,"active":false}},"invalidated":true}]}},"example://2":{"length":{"data":[{"visible":true,"active":false,"handles":{"start":{"x":101.84375,"y":120,"highlight":true,"active":false},"end":{"x":144.84375,"y":55,"highlight":true,"active":false}},"invalidated":true},{"visible":true,"active":false,"handles":{"start":{"x":208.84375,"y":141,"highlight":true,"active":false},"end":{"x":81.84375,"y":163,"highlight":true,"active":false}},"invalidated":true},{"visible":true,"active":false,"handles":{"start":{"x":52.84375,"y":77,"highlight":true,"active":false},"end":{"x":88.84375,"y":109,"highlight":true,"active":false},"textBox":{"x":88.84375,"y":109,"highlight":true,"active":false, "hasMoved": false}},"invalidated":true}]}}},"elementToolState":{"axial1":{"stack":{"data":[{"currentImageIdIndex":1,"imageIds":["example://1","example://2"]}]}},"axial2":{"stack":{"data":[{"currentImageIdIndex":1,"imageIds":["example://1","example://2"]}]}}},"elementViewport":{"axial1":{"scale":1,"translation":{"x":0,"y":0},"voi":{"windowWidth":256,"windowCenter":127},"pixelReplication":false,"rotation":0,"hflip":false,"vflip":false},"axial2":{"scale":1,"translation":{"x":0,"y":0},"voi":{"windowWidth":256,"windowCenter":127},"pixelReplication":false,"rotation":0,"hflip":false,"vflip":false}}}'>Example 2: Length</option>
                     !-->
-                </select>
-            </div>
-        </div>
-        <div class="col-xs-10">
-            <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
-                 oncontextmenu="return false"
-                 class='cornerstone-enabled-image'
-                 unselectable='on'
-                 onselectstart='return false;'
-                 onmousedown='return false;'>
-                <div id="axial1"
-                     style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
+                    </select>
                 </div>
             </div>
-            <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
-                 oncontextmenu="return false"
-                 class='cornerstone-enabled-image'
-                 unselectable='on'
-                 onselectstart='return false;'
-                 onmousedown='return false;'>
-                <div id="axial2"
-                     style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
+            <div class="col-xs-10">
+                <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
+                    oncontextmenu="return false" class='cornerstone-enabled-image' unselectable='on'
+                    onselectstart='return false;' onmousedown='return false;'>
+                    <div id="axial1" style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
+                    </div>
+                </div>
+                <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
+                    oncontextmenu="return false" class='cornerstone-enabled-image' unselectable='on'
+                    onselectstart='return false;' onmousedown='return false;'>
+                    <div id="axial2" style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body>
 
 <!-- include the cornerstone library -->
@@ -69,8 +65,8 @@
 <script src="../cornerstoneMath.min.js"></script>
 
 <!-- include the cornerstone tools library -->
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
@@ -80,8 +76,8 @@
     function timeNow() {
         // http://stackoverflow.com/questions/10599148/how-do-i-get-the-current-time-only-in-javascript
         var d = new Date(),
-            h = (d.getHours()<10?'0':'') + d.getHours(),
-            m = (d.getMinutes()<10?'0':'') + d.getMinutes();
+            h = (d.getHours() < 10 ? '0' : '') + d.getHours(),
+            m = (d.getMinutes() < 10 ? '0' : '') + d.getMinutes();
         return h + ':' + m;
     }
 
@@ -93,7 +89,7 @@
 
     var elements = [axialElement1, axialElement2];
 
-    save.addEventListener("click", function() {
+    save.addEventListener("click", function () {
         console.log("Saving state");
         var appState = cornerstoneTools.appState.save(elements);
         var serializedState = JSON.stringify(appState);
@@ -106,7 +102,7 @@
         select.appendChild(newOption);
     })
 
-    restore.addEventListener("click", function() {
+    restore.addEventListener("click", function () {
         console.log("Restoring state");
         var serializedState = document.querySelector(".savedState option:checked").value;
         var appState = JSON.parse(serializedState);
@@ -120,12 +116,12 @@
     ];
 
     var axialStack1 = {
-        currentImageIdIndex : 0,
+        currentImageIdIndex: 0,
         imageIds: axialImageIds
     };
 
     var axialStack2 = {
-        currentImageIdIndex : 1,
+        currentImageIdIndex: 1,
         imageIds: axialImageIds
     };
 
@@ -136,7 +132,7 @@
     cornerstoneTools.mouseInput.enable(axialElement1);
     cornerstoneTools.mouseWheelInput.enable(axialElement1);
 
-    cornerstone.loadImage(axialImageIds[0]).then(function(image) {
+    cornerstone.loadImage(axialImageIds[0]).then(function (image) {
         // display this image
         cornerstone.displayImage(axialElement1, image);
 
@@ -159,7 +155,7 @@
     cornerstoneTools.mouseInput.enable(axialElement2);
     cornerstoneTools.mouseWheelInput.enable(axialElement2);
 
-    cornerstone.loadImage(axialImageIds[1]).then(function(image) {
+    cornerstone.loadImage(axialImageIds[1]).then(function (image) {
         // display this image
         cornerstone.displayImage(axialElement2, image);
 
@@ -179,4 +175,5 @@
 
 
 </script>
+
 </html>

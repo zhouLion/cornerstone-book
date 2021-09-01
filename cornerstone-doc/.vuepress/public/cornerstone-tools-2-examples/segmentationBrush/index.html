@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
   <meta charset="utf-8">
   <!-- support for mobile touch devices -->
@@ -9,6 +10,7 @@
   <link href="../dialogPolyfill.css" rel="stylesheet">
   <link href="../cornerstone.min.css" rel="stylesheet">
 </head>
+
 <body>
   <div class="container">
     <div class="page-header">
@@ -24,14 +26,9 @@
     <div class="row">
 
       <div class="col-xs-9">
-        <div style="width:512px;height:512px;position:relative;display:inline-block;"
-            oncontextmenu="return false"
-            class='cornerstone-enabled-image'
-            unselectable='on'
-            onselectstart='return false;'
-            onmousedown='return false;'>
-          <div id="dicomImage"
-            style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
+        <div style="width:512px;height:512px;position:relative;display:inline-block;" oncontextmenu="return false"
+          class='cornerstone-enabled-image' unselectable='on' onselectstart='return false;' onmousedown='return false;'>
+          <div id="dicomImage" style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
           </div>
         </div>
       </div>
@@ -50,11 +47,11 @@
           <button id="drawIncrease" class="btn btn-primary">+</button>
         </div>
         <div class="row">
-            <label for="toolType">Type</label>
-            <select id="toolType" style="width:100%">
-                <option value="brush">Default</option>
-                <option value="adaptiveBrush">Adaptive</option>
-            </select>
+          <label for="toolType">Type</label>
+          <select id="toolType" style="width:100%">
+            <option value="brush">Default</option>
+            <option value="adaptiveBrush">Adaptive</option>
+          </select>
         </div>
 
         <label for="toolDeactivate">Deactivate</label>
@@ -92,8 +89,8 @@
 <script src="../cornerstoneMath.min.js"></script>
 
 <!-- include the cornerstone tools library -->
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
@@ -105,17 +102,17 @@
   let toolType = 'brush';
 
   const imageIds = [
-      'example://1',
-      'example://2',
+    'example://1',
+    'example://2',
   ];
 
   var stack = {
-      currentImageIdIndex : 0,
-      imageIds: imageIds
+    currentImageIdIndex: 0,
+    imageIds: imageIds
   };
 
   cornerstone.enable(element);
-  cornerstone.loadImage(imageIds[0]).then(function(image) {
+  cornerstone.loadImage(imageIds[0]).then(function (image) {
     cornerstone.displayImage(element, image);
 
     cornerstoneTools.addStackStateManager(element, ['stack']);
@@ -154,7 +151,7 @@
     const numberOfColors = cornerstone.colors.getColormap("BrushColorMap").getNumberOfColors();
     let drawId = configuration.draw - 1;
 
-    if (drawId < 0 ) {
+    if (drawId < 0) {
       drawId = numberOfColors - 1;
     }
 
@@ -182,7 +179,7 @@
   });
 
   const deactivateButton = document.getElementById('deactivate');
-  deactivateButton.addEventListener('click', function(){
+  deactivateButton.addEventListener('click', function () {
     cornerstoneTools.brush.deactivate(element);
     cornerstoneTools.adaptiveBrush.deactivate(element);
 
@@ -191,7 +188,7 @@
   });
 
   const toolTypeSelect = document.getElementById('toolType');
-  toolTypeSelect.addEventListener('change', function(){
+  toolTypeSelect.addEventListener('change', function () {
     cornerstoneTools.brush.deactivate(element);
     cornerstoneTools.adaptiveBrush.deactivate(element);
 
@@ -203,4 +200,5 @@
 
 
 </script>
+
 </html>

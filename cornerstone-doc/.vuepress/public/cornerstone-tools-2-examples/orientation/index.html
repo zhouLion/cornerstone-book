@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <!-- twitter bootstrap CSS stylesheet - included to make things pretty, not needed or used by cornerstone -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
@@ -11,12 +12,13 @@
         .disable-selection {
             -moz-user-select: none;
             -webkit-user-select: none;
-            -ms-user-select:none;
-            user-select:none;
+            -ms-user-select: none;
+            user-select: none;
         }
+
         /* prevents cursor from changing to the i bar on the overlays*/
         .noIbar {
-            cursor:default;
+            cursor: default;
         }
 
         .orientationMarker {
@@ -25,54 +27,56 @@
         }
     </style>
 </head>
+
 <body>
-<div class="container">
+    <div class="container">
 
-    <div class="page-header">
-        <h1>Example of identifying DICOM image orientation</h1>
-        <p>
-            DICOM Orientation markers (e.g. for Anterior/Posterior, Superior/Inferior, Left/Right) can be determined from direction cosines of the image plane.
-        </p>
-        <a href="../index.html">Go back to the Examples page</a>
-    </div>
-
-    <div class="col-xs-8 col-sm-2">
-        <div class="btn-group-vertical" role="group">
-            <a id="hFlip" class="btn btn-default">HFlip</a>
-            <a id="vFlip" class="btn btn-default">VFlip</a>
-            <a id="lRotate" class="btn btn-default">Rotate Left</a>
-            <a id="rRotate" class="btn btn-default">Rotate Right</a>
-            <a id="reset" class="btn btn-default">Reset</a>
+        <div class="page-header">
+            <h1>Example of identifying DICOM image orientation</h1>
+            <p>
+                DICOM Orientation markers (e.g. for Anterior/Posterior, Superior/Inferior, Left/Right) can be determined
+                from direction cosines of the image plane.
+            </p>
+            <a href="../index.html">Go back to the Examples page</a>
         </div>
-    </div>
 
-    <div class="col-xs-12 col-sm-10">
-        <div style="width:512px;height:512px;position:relative;color: white;display:inline-block;border-style:solid;border-color:black;"
-             oncontextmenu="return false"
-             class='disable-selection noIbar'
-             unselectable='on'
-             onselectstart='return false;'
-             onmousedown='return false;'>
-            <div id="dicomImage"
-                 style="width:512px;height:512px;top:0px;left:0px;position:absolute;overflow:hidden;">
-                 <div class="orientationMarkers" style="width:512px;height:512px;top:0px;left:0px; position: absolute">
-                    <div class="mrtopmiddle orientationMarkerDiv" style="position: absolute;top:3px; left:253px">
-                        <span class="orientationMarker">S<span>
-                    </div>
-                    <div class="mrrightmiddle orientationMarkerDiv" style="position: absolute;top:253px; left:495px">
-                        <span class="orientationMarker">P<span>
-                    </div>
-                    <div class="mrbottommiddle orientationMarkerDiv" style="position: absolute;top:480px; left:253px">
-                        <span class="orientationMarker">I<span>
-                    </div>
-                    <div class="mrleftmiddle orientationMarkerDiv" style="position: absolute;top:253px; left:3px">
-                        <span class="orientationMarker">A<span>
+        <div class="col-xs-8 col-sm-2">
+            <div class="btn-group-vertical" role="group">
+                <a id="hFlip" class="btn btn-default">HFlip</a>
+                <a id="vFlip" class="btn btn-default">VFlip</a>
+                <a id="lRotate" class="btn btn-default">Rotate Left</a>
+                <a id="rRotate" class="btn btn-default">Rotate Right</a>
+                <a id="reset" class="btn btn-default">Reset</a>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-10">
+            <div style="width:512px;height:512px;position:relative;color: white;display:inline-block;border-style:solid;border-color:black;"
+                oncontextmenu="return false" class='disable-selection noIbar' unselectable='on'
+                onselectstart='return false;' onmousedown='return false;'>
+                <div id="dicomImage"
+                    style="width:512px;height:512px;top:0px;left:0px;position:absolute;overflow:hidden;">
+                    <div class="orientationMarkers"
+                        style="width:512px;height:512px;top:0px;left:0px; position: absolute">
+                        <div class="mrtopmiddle orientationMarkerDiv" style="position: absolute;top:3px; left:253px">
+                            <span class="orientationMarker">S<span>
+                        </div>
+                        <div class="mrrightmiddle orientationMarkerDiv"
+                            style="position: absolute;top:253px; left:495px">
+                            <span class="orientationMarker">P<span>
+                        </div>
+                        <div class="mrbottommiddle orientationMarkerDiv"
+                            style="position: absolute;top:480px; left:253px">
+                            <span class="orientationMarker">I<span>
+                        </div>
+                        <div class="mrleftmiddle orientationMarkerDiv" style="position: absolute;top:253px; left:3px">
+                            <span class="orientationMarker">A<span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body>
 
 
@@ -84,8 +88,8 @@
 <script src="../cornerstoneMath.min.js"></script>
 
 <!-- include the cornerstone tools library -->
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
@@ -101,7 +105,7 @@
             "-moz-transform-origin": "center center",
             "-o-transform-origin": "center center",
             "transform-origin": "center center",
-            "transform" : "rotate("+ rotation +"deg)"
+            "transform": "rotate(" + rotation + "deg)"
         };
 
         var oppositeRotationCSS = {
@@ -109,18 +113,18 @@
             "-moz-transform-origin": "center center",
             "-o-transform-origin": "center center",
             "transform-origin": "center center",
-            "transform" : "rotate("+ -rotation +"deg)"
+            "transform": "rotate(" + -rotation + "deg)"
         };
 
-        Object.keys(rotationCSS).forEach(function(key) {
-          div.style[key] = rotationCSS[key];
+        Object.keys(rotationCSS).forEach(function (key) {
+            div.style[key] = rotationCSS[key];
         });
 
         const orientationMarkerDivs = div.querySelectorAll(".orientationMarkerDiv");
-        Object.keys(rotationCSS).forEach(function(key) {
-          orientationMarkerDivs.forEach(function(div) {
-            div.style[key] = oppositeRotationCSS[key];
-          });
+        Object.keys(rotationCSS).forEach(function (key) {
+            orientationMarkerDivs.forEach(function (div) {
+                div.style[key] = oppositeRotationCSS[key];
+            });
         });
     }
 
@@ -129,7 +133,7 @@
         var enabledElement = cornerstone.getEnabledElement(element);
         var imagePlaneMetaData = cornerstone.metaData.get('imagePlaneModule', enabledElement.image.imageId);
         console.log(imagePlaneMetaData);
-        
+
         var rowString = cornerstoneTools.orientation.getOrientationString(imagePlaneMetaData.rowCosines);
         var columnString = cornerstoneTools.orientation.getOrientationString(imagePlaneMetaData.columnCosines);
 
@@ -174,7 +178,7 @@
     cornerstoneTools.mouseInput.enable(element);
     cornerstoneTools.touchInput.enable(element);
 
-    cornerstone.loadImage(imageId).then(function(image) {
+    cornerstone.loadImage(imageId).then(function (image) {
         cornerstone.displayImage(element, image);
 
         var viewport = cornerstone.getViewport(element);
@@ -193,7 +197,7 @@
             viewport = cornerstone.getViewport(element);
             viewport.hflip = !viewport.hflip;
             cornerstone.setViewport(element, viewport);
-          
+
             var rightMid = element.querySelector('.mrrightmiddle .orientationMarker');
             var leftMid = element.querySelector('.mrleftmiddle .orientationMarker');
             var temp = rightMid.textContent;
@@ -215,16 +219,16 @@
 
         document.getElementById('lRotate').addEventListener('click', function (e) {
             viewport = cornerstone.getViewport(element);
-            viewport.rotation -=90;
+            viewport.rotation -= 90;
             cornerstone.setViewport(element, viewport);
         });
 
         document.getElementById('rRotate').addEventListener('click', function (e) {
             viewport = cornerstone.getViewport(element);
-            viewport.rotation +=90;
+            viewport.rotation += 90;
             cornerstone.setViewport(element, viewport);
         });
-        
+
         document.getElementById('reset').addEventListener('click', function (e) {
             viewport = cornerstone.getViewport(element);
             viewport.hflip = false;
@@ -236,4 +240,5 @@
     });
 
 </script>
+
 </html>

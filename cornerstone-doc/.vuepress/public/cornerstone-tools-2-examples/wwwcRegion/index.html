@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <!-- support for mobile touch devices -->
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
@@ -12,47 +13,48 @@
     <style>
         /* prevents selection when left click dragging */
         .disable-selection {
-            -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
+
         /* prevents cursor from changing to the i bar on the overlays*/
         .noIbar {
-            cursor:default;
+            cursor: default;
         }
     </style>
 </head>
-<body>
-<div class="container">
-    <div class="page-header">
-        <h1>
-            WW/WC Region Example
-        </h1>
-        <p>
-            This page contains an example of the regional WW/WC tool
-        </p>
-        <a href="../index.html">Go back to the Examples page</a>
-    </div>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-2">
-            <ul class="list-group">
-                <a id="activate" class="list-group-item">Activate</a>
-                <a id="disable" class="list-group-item">Disable</a>
-            </ul>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                WW/WC Region Example
+            </h1>
+            <p>
+                This page contains an example of the regional WW/WC tool
+            </p>
+            <a href="../index.html">Go back to the Examples page</a>
         </div>
-        <div class="col-xs-6">
-            <div style="width:512px;height:512px;position:relative;display:inline-block;color:white;"
-                 oncontextmenu="return false"
-                 class='cornerstone-enabled-image disable-selection noIbar'
-                 unselectable='on'
-                 onselectstart='return false;'
-                 onmousedown='return false;'>
-                <div id="dicomImage"
-                     style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-2">
+                <ul class="list-group">
+                    <a id="activate" class="list-group-item">Activate</a>
+                    <a id="disable" class="list-group-item">Disable</a>
+                </ul>
+            </div>
+            <div class="col-xs-6">
+                <div style="width:512px;height:512px;position:relative;display:inline-block;color:white;"
+                    oncontextmenu="return false" class='cornerstone-enabled-image disable-selection noIbar'
+                    unselectable='on' onselectstart='return false;' onmousedown='return false;'>
+                    <div id="dicomImage" style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+        </div>
 
 </body>
 
@@ -64,8 +66,8 @@
 <script src="../cornerstoneMath.min.js"></script>
 
 <!-- include the cornerstone tools library -->
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
@@ -80,7 +82,7 @@
     cornerstoneTools.mouseInput.enable(element);
     cornerstoneTools.touchInput.enable(element);
 
-    cornerstone.loadImage(imageId).then(function(image) {
+    cornerstone.loadImage(imageId).then(function (image) {
         cornerstone.displayImage(element, image);
 
         // Enable all tools we want to use with this element
@@ -90,21 +92,21 @@
         activate("activate");
 
         function activate(id) {
-            document.querySelectorAll('a').forEach(function(elem) {
-              elem.classList.remove('active');
+            document.querySelectorAll('a').forEach(function (elem) {
+                elem.classList.remove('active');
             });
 
             document.getElementById(id).classList.add('active');
         }
 
         // Tool button event handlers that set the new active tool
-        document.getElementById('disable').addEventListener('click', function() {
+        document.getElementById('disable').addEventListener('click', function () {
             activate("disable");
             cornerstoneTools.wwwcRegion.disable(element);
             cornerstoneTools.wwwcRegionTouch.disable(element);
             return false;
         });
-        document.getElementById('activate').addEventListener('click', function() {
+        document.getElementById('activate').addEventListener('click', function () {
             activate("activate");
             cornerstoneTools.wwwcRegion.activate(element, 1);
             cornerstoneTools.wwwcRegionTouch.activate(element);
@@ -113,4 +115,5 @@
     });
 
 </script>
+
 </html>

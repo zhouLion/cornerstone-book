@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <!-- support for mobile touch devices -->
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
@@ -14,13 +15,19 @@
     <style>
         /* prevents selection when left click dragging */
         .disable-selection {
-            -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
+
         /* prevents cursor from changing to the i bar on the overlays*/
         .noIbar {
-            cursor:default;
+            cursor: default;
         }
-        .annotationDialog, .relabelDialog {
+
+        .annotationDialog,
+        .relabelDialog {
             z-index: 1000;
             position: absolute;
             margin: 0px;
@@ -30,71 +37,71 @@
             border: 1px black solid;
             border-radius: 5px;
         }
+
         .annotationTextInputOptions {
             padding: 5px 0px;
         }
+
         .annotationTextInput {
             margin-left: 5px;
         }
+
         .annotationDialogConfirm {
             float: right;
         }
     </style>
 </head>
+
 <body>
-<div class="container">
-    <div class="page-header">
-        <h1>
-            Annotation Example
-        </h1>
-        <p>
-            This page contains an example of the text annotation tool
-        </p>
-        <a href="../index.html">Go back to the Examples page</a>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12 col-sm-2">
-            <ul class="list-group">
-                <a id="enable" class="list-group-item">Enable</a>
-                <a id="activate" class="list-group-item">Activate</a>
-                <a id="deactivate" class="list-group-item">Deactivate</a>
-                <a id="disable" class="list-group-item">Disable</a>
-            </ul>
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                Annotation Example
+            </h1>
+            <p>
+                This page contains an example of the text annotation tool
+            </p>
+            <a href="../index.html">Go back to the Examples page</a>
         </div>
-        <div class="col-xs-6">
-            <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
-                 oncontextmenu="return false"
-                 class='cornerstone-enabled-image disable-selection noIbar'
-                 unselectable='on'
-                 onselectstart='return false;'
-                 onmousedown='return false;'>
-                <div id="dicomImage"
-                     style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
-                </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-2">
+                <ul class="list-group">
+                    <a id="enable" class="list-group-item">Enable</a>
+                    <a id="activate" class="list-group-item">Activate</a>
+                    <a id="deactivate" class="list-group-item">Deactivate</a>
+                    <a id="disable" class="list-group-item">Disable</a>
+                </ul>
             </div>
-            <dialog class="annotationDialog">
-                <h5>Enter your annotation</h5>
-                <div class="annotationTextInputOptions">
-                    <label for="annotationTextInput">New label</label>
-                    <input name="annotationTextInput" class="annotationTextInput" type="text"/>
+            <div class="col-xs-6">
+                <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
+                    oncontextmenu="return false" class='cornerstone-enabled-image disable-selection noIbar'
+                    unselectable='on' onselectstart='return false;' onmousedown='return false;'>
+                    <div id="dicomImage" style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
+                    </div>
                 </div>
-                <a class="annotationDialogConfirm btn btn-sm btn-primary">OK</a>
-            </dialog>
-            <dialog class="relabelDialog" oncontextmenu="return false">
-                <h5>Edit your annotation</h5>
-                <div class="annotationTextInputOptions">
-                    <label for="annotationTextInput">New label</label>
-                    <input name="annotationTextInput" class="annotationTextInput" type="text"/>
-                </div>
-                <div>
-                    <a class="relabelRemove btn btn-sm btn-secondary">Remove marker</a>
-                    <a class="relabelConfirm btn btn-sm btn-primary">OK</a>
-                </div>
-            </dialog>
-        </div>
+                <dialog class="annotationDialog">
+                    <h5>Enter your annotation</h5>
+                    <div class="annotationTextInputOptions">
+                        <label for="annotationTextInput">New label</label>
+                        <input name="annotationTextInput" class="annotationTextInput" type="text" />
+                    </div>
+                    <a class="annotationDialogConfirm btn btn-sm btn-primary">OK</a>
+                </dialog>
+                <dialog class="relabelDialog" oncontextmenu="return false">
+                    <h5>Edit your annotation</h5>
+                    <div class="annotationTextInputOptions">
+                        <label for="annotationTextInput">New label</label>
+                        <input name="annotationTextInput" class="annotationTextInput" type="text" />
+                    </div>
+                    <div>
+                        <a class="relabelRemove btn btn-sm btn-secondary">Remove marker</a>
+                        <a class="relabelConfirm btn btn-sm btn-primary">OK</a>
+                    </div>
+                </dialog>
+            </div>
 
-    </div>
+        </div>
 
 </body>
 
@@ -106,8 +113,8 @@
 <script src="../cornerstoneMath.min.js"></script>
 
 <!-- include the cornerstone tools library -->
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
@@ -128,7 +135,7 @@
     // Define a callback to get your text annotation
     // This could be used, e.g. to open a modal
     function getTextCallback(doneChangingTextCallback) {
-        var annotationDialog  = document.querySelector('.annotationDialog');
+        var annotationDialog = document.querySelector('.annotationDialog');
         var getTextInput = annotationDialog.querySelector('.annotationTextInput');
         var confirm = annotationDialog.querySelector('.annotationDialogConfirm');
 
@@ -167,8 +174,8 @@
         relabelDialog.showModal();
 
         function confirmHandler() {
-           relabelDialog.close();
-           doneChangingTextCallback(data, getTextInput.value);
+            relabelDialog.close();
+            doneChangingTextCallback(data, getTextInput.value);
         }
 
         confirm.removeEventListener('click', confirmHandler);
@@ -176,8 +183,8 @@
 
         // If the remove button is clicked, delete this marker
         function removeHandler() {
-          relabelDialog.close();
-          doneChangingTextCallback(data, undefined, true);
+            relabelDialog.close();
+            doneChangingTextCallback(data, undefined, true);
         }
 
         remove.removeEventListener('click', removeHandler);
@@ -202,11 +209,11 @@
     }
 
     var config = {
-        getTextCallback : getTextCallback,
-        changeTextCallback : changeTextCallback,
-        drawHandles : false,
-        drawHandlesOnHover : true,
-        arrowFirst : true
+        getTextCallback: getTextCallback,
+        changeTextCallback: changeTextCallback,
+        drawHandles: false,
+        drawHandlesOnHover: true,
+        arrowFirst: true
     }
 
     // image enable the dicomImage element
@@ -214,7 +221,7 @@
     cornerstoneTools.mouseInput.enable(element);
     cornerstoneTools.touchInput.enable(element);
 
-    cornerstone.loadImage(imageId).then(function(image) {
+    cornerstone.loadImage(imageId).then(function (image) {
         cornerstone.displayImage(element, image);
 
         // Try commenting this out to see the default behaviour
@@ -230,30 +237,30 @@
         activate("activate");
 
         function activate(id) {
-            document.querySelectorAll('a').forEach(function(elem) {              elem.classList.remove('active');            });
+            document.querySelectorAll('a').forEach(function (elem) { elem.classList.remove('active'); });
             document.getElementById(id).classList.add('active');
         }
 
         // Tool button event handlers that set the new active tool
-        document.getElementById('enable').addEventListener('click', function() {
+        document.getElementById('enable').addEventListener('click', function () {
             activate("enable");
             cornerstoneTools.arrowAnnotate.enable(element);
             cornerstoneTools.arrowAnnotateTouch.enable(element);
             return false;
         });
-        document.getElementById('disable').addEventListener('click', function() {
+        document.getElementById('disable').addEventListener('click', function () {
             activate("disable");
             cornerstoneTools.arrowAnnotate.disable(element);
             cornerstoneTools.arrowAnnotateTouch.disable(element);
             return false;
         });
-        document.getElementById('activate').addEventListener('click', function() {
+        document.getElementById('activate').addEventListener('click', function () {
             activate("activate");
             cornerstoneTools.arrowAnnotate.activate(element, 1);
             cornerstoneTools.arrowAnnotateTouch.activate(element);
             return false;
         });
-        document.getElementById('deactivate').addEventListener('click', function() {
+        document.getElementById('deactivate').addEventListener('click', function () {
             activate("deactivate");
             cornerstoneTools.arrowAnnotate.deactivate(element, 1);
             cornerstoneTools.arrowAnnotateTouch.deactivate(element);
@@ -262,4 +269,5 @@
     });
 
 </script>
+
 </html>

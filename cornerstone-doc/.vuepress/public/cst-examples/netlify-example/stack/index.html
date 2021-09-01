@@ -11,11 +11,11 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S95NP6G4YB"></script>
 	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-	gtag('config', 'G-S95NP6G4YB');
+		gtag('config', 'G-S95NP6G4YB');
 	</script>
 </head>
 
@@ -30,7 +30,8 @@
 			<!-- Select Active Tool -->
 			<ul class="tool-category active" data-tool-category="tools">
 				<li><a href="#" data-tool="StackScroll" data-tool-interaction="drag">Mouse stack</a></li>
-				<li><a href="#" data-tool="StackScrollMouseWheel" data-tool-interaction="wheel">StackScrollMouseWheel</a></li>
+				<li><a href="#" data-tool="StackScrollMouseWheel"
+						data-tool-interaction="wheel">StackScrollMouseWheel</a></li>
 			</ul>
 
 			<!-- Our beautiful element targets -->
@@ -66,8 +67,8 @@
 <!-- include the cornerstone library -->
 <script src="https://unpkg.com/cornerstone-core@2.2.6/dist/cornerstone.js"></script>
 <script src="https://unpkg.com/cornerstone-math@0.1.6/dist/cornerstoneMath.js"></script>
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../textImageLoader.js"></script>

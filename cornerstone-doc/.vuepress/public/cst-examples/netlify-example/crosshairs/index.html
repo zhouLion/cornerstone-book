@@ -1,90 +1,94 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <!-- support for mobile touch devices -->
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <style>
         #app {
-			font-family: "Avenir", Helvetica, Arial, sans-serif;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-			text-align: center;
-			color: #333;
-			margin-top: 60px;
-		}
+            font-family: "Avenir", Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: #333;
+            margin-top: 60px;
+        }
 
-        .canvasAxial, .canvasCoronal {
+        .canvasAxial,
+        .canvasCoronal {
             display: inline-block;
             width: 256px;
         }
 
         .hide {
-			display: none;
-		}
+            display: none;
+        }
 
         .checkbox-label {
-			text-transform: uppercase;
-			margin: 0.5em 1em;
-			border: 0;
-			border-bottom: 2px solid #ccc;
-			background: transparent;
-			outline: 0;
-			cursor: pointer;
-		}
+            text-transform: uppercase;
+            margin: 0.5em 1em;
+            border: 0;
+            border-bottom: 2px solid #ccc;
+            background: transparent;
+            outline: 0;
+            cursor: pointer;
+        }
 
-		.checkbox-label:hover {
-			border-bottom: 2px solid #4ea;
-		}
+        .checkbox-label:hover {
+            border-bottom: 2px solid #4ea;
+        }
 
-		.checkbox-label {
-			font: 400 11px system-ui;
-			color: #000;
-		}
+        .checkbox-label {
+            font: 400 11px system-ui;
+            color: #000;
+        }
 
-		.label-off {
-			color: #e44;
-		}
+        .label-off {
+            color: #e44;
+        }
 
-		.label-on {
-			color: #4ea;
-		}
+        .label-on {
+            color: #4ea;
+        }
 
-		.checkbox-label .label-on {
-			display: none;
-		}
+        .checkbox-label .label-on {
+            display: none;
+        }
 
-		.checkbox-label.turned-on .label-on {
-			display: inline-block;
-		}
+        .checkbox-label.turned-on .label-on {
+            display: inline-block;
+        }
 
-		.checkbox-label.turned-on .label-off {
-			display: none;
-		}
+        .checkbox-label.turned-on .label-off {
+            display: none;
+        }
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S95NP6G4YB"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-S95NP6G4YB');
     </script>
 </head>
+
 <body>
     <div id="app">
         <h1>
             Multi viewports tools
         </h1>
 
-        <div class="wrapper" oncontextmenu="return false" unselectable="on" onselectstart="return false" onmousedown="return false">
-                <label id="Crosshairs" class="checkbox-label" for="CrosshairsCheckbox">
-                    Crosshairs
-                    <label class="label-on"> ON</label>
-                    <label class="label-off"> OFF</label>
-                </label>
-                <input id="CrosshairsCheckbox" class="hide" data-tool="Crosshairs" type="checkbox" />
+        <div class="wrapper" oncontextmenu="return false" unselectable="on" onselectstart="return false"
+            onmousedown="return false">
+            <label id="Crosshairs" class="checkbox-label" for="CrosshairsCheckbox">
+                Crosshairs
+                <label class="label-on"> ON</label>
+                <label class="label-off"> OFF</label>
+            </label>
+            <input id="CrosshairsCheckbox" class="hide" data-tool="Crosshairs" type="checkbox" />
         </div>
         <div>
             <div class="canvasAxial" oncontextmenu="return false"></div>
@@ -98,8 +102,8 @@
 <!-- include the cornerstone library -->
 <script src="https://unpkg.com/cornerstone-core@2.2.4/dist/cornerstone.min.js"></script>
 <script src="https://unpkg.com/cornerstone-math@0.1.6/dist/cornerstoneMath.min.js"></script>
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../imageLoader.js"></script>
@@ -118,7 +122,7 @@
         'example://2'
     ];
     const axialStack = {
-        currentImageIdIndex : 0,
+        currentImageIdIndex: 0,
         imageIds: axialImageIds
     };
 
@@ -129,7 +133,7 @@
         cornerstone.enable(element);
     });
 
-    var axialPromise = cornerstone.loadImage(axialImageIds[0]).then(function(image) {
+    var axialPromise = cornerstone.loadImage(axialImageIds[0]).then(function (image) {
         // display this image
         cornerstone.displayImage(axialElement, image);
 
@@ -138,12 +142,12 @@
         cornerstoneTools.addToolState(axialElement, 'stack', axialStack);
     });
 
-    var coronalPromise = cornerstone.loadImage('example://3').then(function(image) {
+    var coronalPromise = cornerstone.loadImage('example://3').then(function (image) {
         // display this image
         cornerstone.displayImage(coronalElement, image);
     });
 
-    Promise.all([axialPromise, coronalPromise]).then(function() {
+    Promise.all([axialPromise, coronalPromise]).then(function () {
         // Add the enabled elements to the synchronization context
         elements.forEach(element => {
             synchronizer.add(element);
@@ -160,17 +164,17 @@
     const StackScrollTool = new cornerstoneTools.stackScrollTool();
     const StackScrollMouseWheelTool = new cornerstoneTools.stackScrollMouseWheelTool();
 
-    cornerstoneTools.addTool(axialElement, StackScrollTool, {mouseButtonMask: 1});
+    cornerstoneTools.addTool(axialElement, StackScrollTool, { mouseButtonMask: 1 });
     cornerstoneTools.addTool(axialElement, StackScrollMouseWheelTool);
-    cornerstoneTools.setToolActive(axialElement, 'stackScroll', {mouseButtonMask: 1});
-    cornerstoneTools.setToolActive(axialElement, 'stackScrollMouseWheel', {mouseButtonMask: 4});
+    cornerstoneTools.setToolActive(axialElement, 'stackScroll', { mouseButtonMask: 1 });
+    cornerstoneTools.setToolActive(axialElement, 'stackScrollMouseWheel', { mouseButtonMask: 4 });
 
     toolCheckBox = document.querySelector('input[type="checkbox"]');
     const toolLabel = document.querySelector(`#Crosshairs`);
     toolCheckBox.addEventListener('change', (evt) => {
         if (evt.currentTarget.checked) {
             cornerstoneTools.setToolActive(axialElement, 'crosshairs', { mouseButtonMask: 1, synchronizationContext: synchronizer });
-            cornerstoneTools.setToolActive(coronalElement, 'crosshairs', { mouseButtonMask: 1, synchronizationContext: synchronizer});
+            cornerstoneTools.setToolActive(coronalElement, 'crosshairs', { mouseButtonMask: 1, synchronizationContext: synchronizer });
         } else {
             cornerstoneTools.setToolPassive(axialElement, 'crosshairs');
             cornerstoneTools.setToolPassive(coronalElement, 'crosshairs');
@@ -179,4 +183,5 @@
     });
 
 </script>
+
 </html>

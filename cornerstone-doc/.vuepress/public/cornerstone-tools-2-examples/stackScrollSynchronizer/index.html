@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <!-- support for mobile touch devices -->
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,6 +17,7 @@
     </style>
 
 </head>
+
 <body>
     <div class="container">
         <div class="page-header">
@@ -23,7 +25,7 @@
                 Stack Scroll Synchronizer Example
             </h1>
             <p>
-                This page contains an example of the scroll stack synchronizer tool.  It detects changes made
+                This page contains an example of the scroll stack synchronizer tool. It detects changes made
                 to the index within a single viewport and syncronizes the offset with the sychronized elements.
                 (e.g. Scrolling will increment / decrement the index of each viewport in the synchronizer).
             </p>
@@ -41,35 +43,23 @@
             </div>
             <div class="col-xs-10">
                 <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
-                     oncontextmenu="return false"
-                     class='cornerstone-enabled-image'
-                     unselectable='on'
-                     onselectstart='return false;'
-                     onmousedown='return false;'>
-                    <div id="axial1"
-                         style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
+                    oncontextmenu="return false" class='cornerstone-enabled-image' unselectable='on'
+                    onselectstart='return false;' onmousedown='return false;'>
+                    <div id="axial1" style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
                     </div>
                     <span class="index">0</span>
                 </div>
                 <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
-                     oncontextmenu="return false"
-                     class='cornerstone-enabled-image'
-                     unselectable='on'
-                     onselectstart='return false;'
-                     onmousedown='return false;'>
-                    <div id="axial2"
-                         style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
+                    oncontextmenu="return false" class='cornerstone-enabled-image' unselectable='on'
+                    onselectstart='return false;' onmousedown='return false;'>
+                    <div id="axial2" style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
                     </div>
                     <span class="index">1</span>
                 </div>
                 <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
-                     oncontextmenu="return false"
-                     class='cornerstone-enabled-image'
-                     unselectable='on'
-                     onselectstart='return false;'
-                     onmousedown='return false;'>
-                    <div id="axial3"
-                         style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
+                    oncontextmenu="return false" class='cornerstone-enabled-image' unselectable='on'
+                    onselectstart='return false;' onmousedown='return false;'>
+                    <div id="axial3" style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
                     </div>
                     <span class="index">2</span>
                 </div>
@@ -91,8 +81,8 @@
 <script src="../cornerstoneMath.min.js"></script>
 
 <!-- include the cornerstone tools library -->
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
@@ -110,15 +100,15 @@
     ];
 
     var axialStack1 = {
-        currentImageIdIndex : 0,
+        currentImageIdIndex: 0,
         imageIds: axialImageIds
     };
     var axialStack2 = {
-        currentImageIdIndex : 1,
+        currentImageIdIndex: 1,
         imageIds: axialImageIds
     };
     var axialStack3 = {
-        currentImageIdIndex : 2,
+        currentImageIdIndex: 2,
         imageIds: axialImageIds
     };
 
@@ -126,7 +116,7 @@
         { element: axialElement1, stack: axialStack1 },
         { element: axialElement2, stack: axialStack2 },
         { element: axialElement3, stack: axialStack3 }]
-    ;
+        ;
 
     var synchronizer = new cornerstoneTools.Synchronizer("cornerstonestackscroll", cornerstoneTools.stackScrollSynchronizer);
 
@@ -136,7 +126,7 @@
         const stack = stacks[s].stack;
 
         cornerstone.enable(element);
-        cornerstone.loadImage(stack.imageIds[stack.currentImageIdIndex]).then(function(image) {
+        cornerstone.loadImage(stack.imageIds[stack.currentImageIdIndex]).then(function (image) {
             // display this image
             cornerstone.displayImage(element, image);
 
@@ -155,9 +145,9 @@
         });
     }
 
-    function activate(id){
-        document.querySelectorAll('a').forEach(function(elem) {
-          elem.classList.remove('active');
+    function activate(id) {
+        document.querySelectorAll('a').forEach(function (elem) {
+            elem.classList.remove('active');
         });
 
         document.getElementById(id).classList.add('active');
@@ -209,4 +199,5 @@
         });
     });
 </script>
+
 </html>

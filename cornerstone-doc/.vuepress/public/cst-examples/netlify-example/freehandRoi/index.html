@@ -11,11 +11,11 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S95NP6G4YB"></script>
 	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-	gtag('config', 'G-S95NP6G4YB');
+		gtag('config', 'G-S95NP6G4YB');
 	</script>
 </head>
 
@@ -37,7 +37,8 @@
 				<li><a href="#" id="loadToolState">Load Freehand State</a></li>
 			</ul>
 			<ul class="tool-category" data-tool-category="mousewheel">
-				<li><a href="#" data-tool="StackScrollMouseWheel" data-tool-interaction="wheel">StackScrollMouseWheel</a></li>
+				<li><a href="#" data-tool="StackScrollMouseWheel"
+						data-tool-interaction="wheel">StackScrollMouseWheel</a></li>
 				<li><a href="#" data-tool="ZoomMouseWheel" data-tool-interaction="wheel">ZoomMouseWheel</a></li>
 			</ul>
 
@@ -167,7 +168,8 @@
 								</button>
 							</th>
 							<td>
-								Toggles whether the freehand roi sculptor cursor can be seen whilst hovering near the selected region.
+								Toggles whether the freehand roi sculptor cursor can be seen whilst hovering near the
+								selected region.
 							</td>
 						</tr>
 						<tr>
@@ -177,7 +179,8 @@
 								</button>
 							</th>
 							<td>
-								Toggles whether the freehand roi sculptor should have a maximum size when far from the selected region.
+								Toggles whether the freehand roi sculptor should have a maximum size when far from the
+								selected region.
 							</td>
 						</tr>
 						<tr>
@@ -196,7 +199,8 @@
 							<td>
 								<input type="range" id="hoverCursorFadeAlpha" min="0" max="255">
 							</td>
-							<td>hoverCursorFadeAlpha - The alpha of the cursor when distant from the region, if showCursorOnHover and
+							<td>hoverCursorFadeAlpha - The alpha of the cursor when distant from the region, if
+								showCursorOnHover and
 								limitRadiusOutsideRegion are enabled.</td>
 						</tr>
 						<tr>
@@ -220,8 +224,8 @@
 <!-- include the cornerstone library -->
 <script src="https://unpkg.com/cornerstone-core@2.2.6/dist/cornerstone.js"></script>
 <script src="https://unpkg.com/cornerstone-math@0.1.6/dist/cornerstoneMath.js"></script>
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../imageLoader.js"></script>

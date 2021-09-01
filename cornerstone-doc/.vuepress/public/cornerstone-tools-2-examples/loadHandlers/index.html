@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <!-- support for mobile touch devices -->
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,34 +16,31 @@
         }
     </style>
 </head>
-<body>
-<div class="container">
-    <div class="page-header">
-        <h1>
-            Load Handler Example
-        </h1>
-        <p>
-            This page contains an example of setting load handler functions
-        </p>
-        <a href="../index.html">Go back to the Examples page</a>
-    </div>
 
-    <div class="row">
-        <div class="col-xs-6">
-            <div id="errorDescription"></div>
-            <div style="width:512px;height:512px;position:relative;display:inline-block;color:white;"
-                 oncontextmenu="return false"
-                 class='cornerstone-enabled-image'
-                 unselectable='on'
-                 onselectstart='return false;'
-                 onmousedown='return false;'>
-                <div id="dicomImage"
-                     style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
-                </div>
-            </div>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                Load Handler Example
+            </h1>
+            <p>
+                This page contains an example of setting load handler functions
+            </p>
+            <a href="../index.html">Go back to the Examples page</a>
         </div>
 
-    </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div id="errorDescription"></div>
+                <div style="width:512px;height:512px;position:relative;display:inline-block;color:white;"
+                    oncontextmenu="return false" class='cornerstone-enabled-image' unselectable='on'
+                    onselectstart='return false;' onmousedown='return false;'>
+                    <div id="dicomImage" style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
 </body>
 
@@ -51,8 +49,8 @@
 <script src="../cornerstoneMath.min.js"></script>
 
 <!-- include the cornerstone tools library -->
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
@@ -74,12 +72,13 @@
     // image enable the dicomImage element
     cornerstone.enable(element);
 
-    cornerstone.loadImage(imageId).then(function(image) {
+    cornerstone.loadImage(imageId).then(function (image) {
         cornerstone.displayImage(element, image);
-    }, function() {
+    }, function () {
         var errorLoadingHandler = cornerstoneTools.loadHandlerManager.getErrorLoadingHandler();
         errorLoadingHandler(element, imageId);
     });
 
 </script>
+
 </html>

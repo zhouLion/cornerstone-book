@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <!-- support for mobile touch devices -->
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,41 +11,38 @@
     <link href="../cornerstone.min.css" rel="stylesheet">
 
 </head>
-<body>
-<div class="container">
-    <div class="page-header">
-        <h1>
-            Probe Tools Example
-        </h1>
-        <p>
-            This page contains an example of the probe tool
-        </p>
-        <a href="../index.html">Go back to the Examples page</a>
-    </div>
 
-    <div class="row">
-        <div class="col-xs-2">
-            <ul class="list-group">
-                <a id="disable" class="list-group-item">Disable</a>
-                <a id="enable" class="list-group-item">Enable</a>
-                <a id="activate" class="list-group-item">Activate</a>
-                <a id="deactivate" class="list-group-item">Deactivate</a>
-            </ul>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                Probe Tools Example
+            </h1>
+            <p>
+                This page contains an example of the probe tool
+            </p>
+            <a href="../index.html">Go back to the Examples page</a>
         </div>
-        <div class="col-xs-6">
-            <div style="width:512px;height:512px;position:relative;display:inline-block;color:white;"
-                 oncontextmenu="return false"
-                 class='cornerstone-enabled-image'
-                 unselectable='on'
-                 onselectstart='return false;'
-                 onmousedown='return false;'>
-                <div id="dicomImage"
-                     style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
+
+        <div class="row">
+            <div class="col-xs-2">
+                <ul class="list-group">
+                    <a id="disable" class="list-group-item">Disable</a>
+                    <a id="enable" class="list-group-item">Enable</a>
+                    <a id="activate" class="list-group-item">Activate</a>
+                    <a id="deactivate" class="list-group-item">Deactivate</a>
+                </ul>
+            </div>
+            <div class="col-xs-6">
+                <div style="width:512px;height:512px;position:relative;display:inline-block;color:white;"
+                    oncontextmenu="return false" class='cornerstone-enabled-image' unselectable='on'
+                    onselectstart='return false;' onmousedown='return false;'>
+                    <div id="dicomImage" style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+        </div>
 
 </body>
 
@@ -53,8 +51,8 @@
 <script src="../cornerstoneMath.min.js"></script>
 
 <!-- include the cornerstone tools library -->
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
@@ -68,7 +66,7 @@
     cornerstone.enable(element);
     cornerstoneTools.mouseInput.enable(element);
 
-    cornerstone.loadImage(imageId).then(function(image) {
+    cornerstone.loadImage(imageId).then(function (image) {
         cornerstone.displayImage(element, image);
 
         // Enable all tools we want to use with this element
@@ -76,34 +74,35 @@
         activate("activate");
 
         function activate(id) {
-            document.querySelectorAll('a').forEach(function(elem) {
-              elem.classList.remove('active');
+            document.querySelectorAll('a').forEach(function (elem) {
+                elem.classList.remove('active');
             });
 
             document.getElementById(id).classList.add('active');
         }
 
         // Tool button event handlers that set the new active tool
-        document.getElementById('disable').addEventListener('click', function() {
+        document.getElementById('disable').addEventListener('click', function () {
             activate("disable");
             cornerstoneTools.probe.disable(element);
             return false;
         });
-        document.getElementById('enable').addEventListener('click', function() {
+        document.getElementById('enable').addEventListener('click', function () {
             activate("enable");
             cornerstoneTools.probe.enable(element);
             return false;
         });
-        document.getElementById('activate').addEventListener('click', function() {
+        document.getElementById('activate').addEventListener('click', function () {
             activate("activate");
             cornerstoneTools.probe.activate(element, 1);
             return false;
         });
-        document.getElementById('deactivate').addEventListener('click', function() {
+        document.getElementById('deactivate').addEventListener('click', function () {
             activate("deactivate");
             cornerstoneTools.probe.deactivate(element, 1);
             return false;
         });
     });
 </script>
+
 </html>

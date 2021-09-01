@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <!-- support for mobile touch devices -->
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,60 +11,57 @@
     <link href="../cornerstone.min.css" rel="stylesheet">
 
 </head>
+
 <body>
-<div class="container">
-    <div class="page-header">
-        <h1>
-            Time Series Scroll Tools Example
-        </h1>
-        <p>
-            This page contains an example of the time series scroll tool.  Change to different time points
-            by using the mouse wheel or left click dragging.  You can also start/stop the play tool.
-        </p>
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                Time Series Scroll Tools Example
+            </h1>
+            <p>
+                This page contains an example of the time series scroll tool. Change to different time points
+                by using the mouse wheel or left click dragging. You can also start/stop the play tool.
+            </p>
 
-    </div>
-
-    <div class="row">
-        <div class="col-xs-2">
-            <ul class="list-group">
-                <a id="playClip" class="list-group-item">Play Time Series</a>
-                <a id="stopClip" class="list-group-item">Stop Time Series</a>
-            </ul>
         </div>
-        <div class="col-xs-6">
-            <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
-                 oncontextmenu="return false"
-                 class='cornerstone-enabled-image'
-                 unselectable='on'
-                 onselectstart='return false;'
-                 onmousedown='return false;'>
-                <div id="dicomImage"
-                     style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
-                </div>
-                <div id="mrtopleft" style="position: absolute;top:0px; left:0px">
-                    Patient Name
-                </div>
-                <div id="mrtopright" style="position: absolute;top:0px; right:0px">
-                    Hospital
-                </div>
-                <div id="mrbottomright" style="position: absolute;bottom:0px; right:0px">
-                    <div id="frameRate">FPS: </div>
-                    <div id="zoomText">Zoom:</div>
-                    <div id="imageNumAndCount">Image #</div>
-                    <div id="timePoint">TimeSeries #</div>
-                </div>
-                <div id="mrbottomleft" style="position: absolute;bottom:0px; left:0px">
-                    WW/WC:
+
+        <div class="row">
+            <div class="col-xs-2">
+                <ul class="list-group">
+                    <a id="playClip" class="list-group-item">Play Time Series</a>
+                    <a id="stopClip" class="list-group-item">Stop Time Series</a>
+                </ul>
+            </div>
+            <div class="col-xs-6">
+                <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
+                    oncontextmenu="return false" class='cornerstone-enabled-image' unselectable='on'
+                    onselectstart='return false;' onmousedown='return false;'>
+                    <div id="dicomImage" style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
+                    </div>
+                    <div id="mrtopleft" style="position: absolute;top:0px; left:0px">
+                        Patient Name
+                    </div>
+                    <div id="mrtopright" style="position: absolute;top:0px; right:0px">
+                        Hospital
+                    </div>
+                    <div id="mrbottomright" style="position: absolute;bottom:0px; right:0px">
+                        <div id="frameRate">FPS: </div>
+                        <div id="zoomText">Zoom:</div>
+                        <div id="imageNumAndCount">Image #</div>
+                        <div id="timePoint">TimeSeries #</div>
+                    </div>
+                    <div id="mrbottomleft" style="position: absolute;bottom:0px; left:0px">
+                        WW/WC:
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xs-4">
-            <ul id="data">
+            <div class="col-xs-4">
+                <ul id="data">
 
-            </ul>
-        </div>
+                </ul>
+            </div>
 
-    </div>
+        </div>
 
 </body>
 
@@ -72,8 +70,8 @@
 <script src="../cornerstoneMath.min.js"></script>
 
 <!-- include the cornerstone tools library -->
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
@@ -110,18 +108,18 @@
         'example://2'
     ];
     var stack = {
-        currentImageIdIndex : 0,
+        currentImageIdIndex: 0,
         imageIds: imageIds
     };
 
     var stack2 = {
-        currentImageIdIndex : 0,
+        currentImageIdIndex: 0,
         imageIds: imageIds2
     };
 
     var timeSeries = {
-        currentStackIndex :0,
-        stacks : [
+        currentStackIndex: 0,
+        stacks: [
             stack,
             stack2
         ]
@@ -132,7 +130,7 @@
     cornerstone.enable(element);
     cornerstoneTools.mouseInput.enable(element);
     cornerstoneTools.mouseWheelInput.enable(element);
-    cornerstone.loadImage(imageIds[0]).then(function(image) {
+    cornerstone.loadImage(imageIds[0]).then(function (image) {
         // display this image
         cornerstone.displayImage(element, image);
 
@@ -151,18 +149,17 @@
         cornerstoneTools.stackScrollWheel.activate(element);
         //cornerstoneTools.timeSeriesScrollWheel.activate(element);
 
-        function activate(id)
-        {
-            document.querySelectorAll('a').forEach(function(elem) { elem.classList.remove('active'); });
+        function activate(id) {
+            document.querySelectorAll('a').forEach(function (elem) { elem.classList.remove('active'); });
             document.getElementById(id).classList.add('active');
         }
 
-        document.getElementById('playClip').addEventListener('click', function() {
+        document.getElementById('playClip').addEventListener('click', function () {
             activate("playClip");
             cornerstoneTools.timeSeriesPlayer.start(element, 31);
             return false;
         });
-        document.getElementById('stopClip').addEventListener('click', function() {
+        document.getElementById('stopClip').addEventListener('click', function () {
             activate("stopClip");
             cornerstoneTools.timeSeriesPlayer.stop(element);
             document.getElementById('frameRate').textContent = "";
@@ -174,7 +171,7 @@
     function onMeasurementAdded(e) {
         var eventData = e.detail;
         document.getElementById('data').innerHTML = '';
-        eventData.measurement.lineSample.samples.forEach(function(sample) {
+        eventData.measurement.lineSample.samples.forEach(function (sample) {
             console.log(sample);
             document.getElementById('data').append('<li>' + sample + '</li>');
         });
@@ -182,4 +179,5 @@
 
     cornerstone.events.addEventListener('cornerstonetoolsmeasurementadded', onMeasurementAdded);
 </script>
+
 </html>

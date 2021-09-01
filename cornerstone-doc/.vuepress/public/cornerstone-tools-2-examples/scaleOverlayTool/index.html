@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <!-- support for mobile touch devices -->
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,39 +11,36 @@
     <link href="../cornerstone.min.css" rel="stylesheet">
 
 </head>
+
 <body>
-<div class="container">
-    <div class="page-header">
-        <h1>
-            Scale Overlay Example
-        </h1>
-        <p>
-            This page contains an example of the scale overlay tool
-        </p>
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                Scale Overlay Example
+            </h1>
+            <p>
+                This page contains an example of the scale overlay tool
+            </p>
 
-    </div>
-
-    <div class="row">
-        <div class="col-xs-2">
-            <ul class="list-group">
-                <a id="disable" class="list-group-item">Disable</a>
-                <a id="enable" class="list-group-item">Enable</a>
-            </ul>
         </div>
-        <div class="col-xs-6">
-            <div style="width:512px;height:512px;position:relative;display:inline-block;color:white;"
-                 oncontextmenu="return false"
-                 class='cornerstone-enabled-image'
-                 unselectable='on'
-                 onselectstart='return false;'
-                 onmousedown='return false;'>
-                <div id="dicomImage"
-                     style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
+
+        <div class="row">
+            <div class="col-xs-2">
+                <ul class="list-group">
+                    <a id="disable" class="list-group-item">Disable</a>
+                    <a id="enable" class="list-group-item">Enable</a>
+                </ul>
+            </div>
+            <div class="col-xs-6">
+                <div style="width:512px;height:512px;position:relative;display:inline-block;color:white;"
+                    oncontextmenu="return false" class='cornerstone-enabled-image' unselectable='on'
+                    onselectstart='return false;' onmousedown='return false;'>
+                    <div id="dicomImage" style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+        </div>
 
 </body>
 
@@ -51,8 +49,8 @@
 <script src="../cornerstoneMath.min.js"></script>
 
 <!-- include the cornerstone tools library -->
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
@@ -66,7 +64,7 @@
     cornerstone.enable(element);
     cornerstoneTools.mouseInput.enable(element);
 
-    cornerstone.loadImage(imageId).then(function(image) {
+    cornerstone.loadImage(imageId).then(function (image) {
         cornerstone.displayImage(element, image);
 
         // Enable all tools we want to use with this element
@@ -76,19 +74,18 @@
 
         activate("enable");
 
-        function activate(id)
-        {
-            document.querySelectorAll('a').forEach(function(elem) { elem.classList.remove('active'); });
+        function activate(id) {
+            document.querySelectorAll('a').forEach(function (elem) { elem.classList.remove('active'); });
             document.getElementById(id).classList.add('active');
         }
 
         // Tool button event handlers that set the new active tool
-        document.getElementById('disable').addEventListener('click', function() {
+        document.getElementById('disable').addEventListener('click', function () {
             activate("disable");
             cornerstoneTools.scaleOverlayTool.disable(element);
             return false;
         });
-        document.getElementById('enable').addEventListener('click', function() {
+        document.getElementById('enable').addEventListener('click', function () {
             activate("enable");
             cornerstoneTools.scaleOverlayTool.enable(element);
             return false;
@@ -96,4 +93,5 @@
     });
 
 </script>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <!-- support for mobile touch devices -->
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,7 +14,7 @@
     <link href="../cornerstone.min.css" rel="stylesheet">
 
     <style>
-        .relabelDialog{
+        .relabelDialog {
             z-index: 1000;
             position: absolute;
             margin: 0px;
@@ -32,83 +33,30 @@
         }
     </style>
 </head>
+
 <body>
-<div class="container">
-    <div class="page-header">
-        <h1>
-            Text Marker Example
-        </h1>
-        <p>
-            This page contains an example of the text marker tool
-        </p>
-        <a href="../index.html">Go back to the Examples page</a>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-2">
-            <ul class="list-group">
-                <a id="disable" class="list-group-item">Disable</a>
-                <a id="enable" class="list-group-item">Enable</a>
-                <a id="activate" class="list-group-item">Activate</a>
-                <a id="deactivate" class="list-group-item">Deactivate</a>
-            </ul>
-
-            <label for="startFrom">Start from</label>
-            <select name="start" id="startFrom">
-                <!-- Cervical spine !-->
-                <option value="C1">C1</option>
-                <option value="C2">C2</option>
-                <option value="C3">C3</option>
-                <option value="C4">C4</option>
-                <option value="C5">C5</option>
-                <option value="C6">C6</option>
-                <option value="C7" selected>C7</option>
-
-                <!-- Thoracic spine !-->
-                <option value="T1">T1</option>
-                <option value="T2">T2</option>
-                <option value="T3">T3</option>
-                <option value="T4">T4</option>
-                <option value="T5">T5</option>
-                <option value="T6">T6</option>
-                <option value="T7">T7</option>
-                <option value="T8">T8</option>
-                <option value="T9">T9</option>
-                <option value="T10">T10</option>
-                <option value="T11">T11</option>
-                <option value="T12">T12</option>
-
-                <!-- Lumbar spine !-->
-                <option value="L1">L1</option>
-                <option value="L2">L2</option>
-                <option value="L3">L3</option>
-                <option value="L4">L4</option>
-                <option value="L5">L5</option>
-            </select>
-
-            <label for="ascending">Ascending <input type="checkbox" id="ascending" checked/></label>
-            <br/>
-            <label for="loop">Loop <input type="checkbox" id="loop"/></label>
-            <br/>
-            <label for="clearLabels"><a id="clearLabels" class="btn btn-secondary">Clear Labels</a></label>
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                Text Marker Example
+            </h1>
+            <p>
+                This page contains an example of the text marker tool
+            </p>
+            <a href="../index.html">Go back to the Examples page</a>
         </div>
-        <div class="col-xs-6">
-            <div style="width:512px;height:512px;position:relative;display:inline-block;color:white;"
-                 oncontextmenu="return false"
-                 class='cornerstone-enabled-image'
-                 unselectable='on'
-                 onselectstart='return false;'
-                 onmousedown='return false;'>
-                <div id="dicomImage"
-                     style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
-                </div>
-            </div>
-        </div>
-        <dialog class="relabelDialog" oncontextmenu="return false">
-            <h5>Change spine label</h5>
-            <div>
-                <label for="relabelSelect">New label</label>
-                <select name="relabelSelect" class="relabelSelect">
+
+        <div class="row">
+            <div class="col-xs-2">
+                <ul class="list-group">
+                    <a id="disable" class="list-group-item">Disable</a>
+                    <a id="enable" class="list-group-item">Enable</a>
+                    <a id="activate" class="list-group-item">Activate</a>
+                    <a id="deactivate" class="list-group-item">Deactivate</a>
+                </ul>
+
+                <label for="startFrom">Start from</label>
+                <select name="start" id="startFrom">
                     <!-- Cervical spine !-->
                     <option value="C1">C1</option>
                     <option value="C2">C2</option>
@@ -116,7 +64,7 @@
                     <option value="C4">C4</option>
                     <option value="C5">C5</option>
                     <option value="C6">C6</option>
-                    <option value="C7">C7</option>
+                    <option value="C7" selected>C7</option>
 
                     <!-- Thoracic spine !-->
                     <option value="T1">T1</option>
@@ -139,14 +87,64 @@
                     <option value="L4">L4</option>
                     <option value="L5">L5</option>
                 </select>
-            </div>
-            <div>
-                <a class="relabelRemove btn btn-sm btn-secondary">Remove marker</a>
-                <a class="relabelConfirm btn btn-sm btn-primary">OK</a>
-            </div>
-        </dialog>
 
-    </div>
+                <label for="ascending">Ascending <input type="checkbox" id="ascending" checked /></label>
+                <br />
+                <label for="loop">Loop <input type="checkbox" id="loop" /></label>
+                <br />
+                <label for="clearLabels"><a id="clearLabels" class="btn btn-secondary">Clear Labels</a></label>
+            </div>
+            <div class="col-xs-6">
+                <div style="width:512px;height:512px;position:relative;display:inline-block;color:white;"
+                    oncontextmenu="return false" class='cornerstone-enabled-image' unselectable='on'
+                    onselectstart='return false;' onmousedown='return false;'>
+                    <div id="dicomImage" style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
+                    </div>
+                </div>
+            </div>
+            <dialog class="relabelDialog" oncontextmenu="return false">
+                <h5>Change spine label</h5>
+                <div>
+                    <label for="relabelSelect">New label</label>
+                    <select name="relabelSelect" class="relabelSelect">
+                        <!-- Cervical spine !-->
+                        <option value="C1">C1</option>
+                        <option value="C2">C2</option>
+                        <option value="C3">C3</option>
+                        <option value="C4">C4</option>
+                        <option value="C5">C5</option>
+                        <option value="C6">C6</option>
+                        <option value="C7">C7</option>
+
+                        <!-- Thoracic spine !-->
+                        <option value="T1">T1</option>
+                        <option value="T2">T2</option>
+                        <option value="T3">T3</option>
+                        <option value="T4">T4</option>
+                        <option value="T5">T5</option>
+                        <option value="T6">T6</option>
+                        <option value="T7">T7</option>
+                        <option value="T8">T8</option>
+                        <option value="T9">T9</option>
+                        <option value="T10">T10</option>
+                        <option value="T11">T11</option>
+                        <option value="T12">T12</option>
+
+                        <!-- Lumbar spine !-->
+                        <option value="L1">L1</option>
+                        <option value="L2">L2</option>
+                        <option value="L3">L3</option>
+                        <option value="L4">L4</option>
+                        <option value="L5">L5</option>
+                    </select>
+                </div>
+                <div>
+                    <a class="relabelRemove btn btn-sm btn-secondary">Remove marker</a>
+                    <a class="relabelConfirm btn btn-sm btn-primary">OK</a>
+                </div>
+            </dialog>
+
+        </div>
 
 </body>
 <script src="../hammer.min.js"></script>
@@ -156,8 +154,8 @@
 <script src="../cornerstoneMath.min.js"></script>
 
 <!-- include the cornerstone tools library -->
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
@@ -173,14 +171,14 @@
     var imageId = 'example://1';
 
     var startFrom = document.getElementById('startFrom');
-    startFrom.addEventListener('change', function() {
+    startFrom.addEventListener('change', function () {
         var config = cornerstoneTools.textMarker.getConfiguration(config);
         config.current = startFrom.value;
         console.log("Changed starting point to: " + config.current)
     })
 
     var ascending = document.getElementById('ascending');
-    ascending.addEventListener('change', function() {
+    ascending.addEventListener('change', function () {
         var config = cornerstoneTools.textMarker.getConfiguration(config);
         config.ascending = ascending.checked;
         var currentIndex = config.markers.indexOf(config.current);
@@ -212,7 +210,7 @@
     })
 
     var loop = document.getElementById('loop');
-    loop.addEventListener('change', function() {
+    loop.addEventListener('change', function () {
         var config = cornerstoneTools.textMarker.getConfiguration(config);
         config.loop = loop.checked;
         console.log("Changed loop to: " + config.loop)
@@ -220,7 +218,7 @@
 
     var toolType = 'textMarker';
     var clearLabels = document.getElementById('clearLabels');
-    clearLabels.addEventListener('click', function() {
+    clearLabels.addEventListener('click', function () {
         cornerstoneTools.clearToolState(element, toolType);
         cornerstone.updateImage(element);
     })
@@ -244,7 +242,7 @@
         confirm.addEventListener('click', confirmHandler);
 
         // If the remove button is clicked, delete this marker
-        function removeHandler () {
+        function removeHandler() {
             dialog.close();
             doneChangingTextCallback(data, undefined, true);
         }
@@ -270,11 +268,11 @@
     }
 
     var config = {
-        'markers' : ['L5', 'L4', 'L3', 'L2', 'L1', // Lumbar spine
-                     'T12', 'T11', 'T10', 'T9', 'T8', 'T7', // Thoracic spine
-                     'T6', 'T5', 'T4', 'T3', 'T2', 'T1',
-                     'C7', 'C6', 'C5', 'C4', 'C3', 'C2', 'C1', // Cervical spine
-                     ],
+        'markers': ['L5', 'L4', 'L3', 'L2', 'L1', // Lumbar spine
+            'T12', 'T11', 'T10', 'T9', 'T8', 'T7', // Thoracic spine
+            'T6', 'T5', 'T4', 'T3', 'T2', 'T1',
+            'C7', 'C6', 'C5', 'C4', 'C3', 'C2', 'C1', // Cervical spine
+        ],
         'current': startFrom.value,
         'ascending': ascending.checked,
         'loop': loop.checked,
@@ -286,7 +284,7 @@
     cornerstoneTools.mouseInput.enable(element);
     cornerstoneTools.touchInput.enable(element);
 
-    cornerstone.loadImage(imageId).then(function(image) {
+    cornerstone.loadImage(imageId).then(function (image) {
         cornerstone.displayImage(element, image);
 
         cornerstoneTools.textMarker.enable(element);
@@ -299,29 +297,28 @@
         cornerstoneTools.zoom.activate(element, 4);
         activate("activate");
 
-        function activate(id)
-        {
-            document.querySelectorAll('a').forEach(function(elem) { elem.classList.remove('active'); });
+        function activate(id) {
+            document.querySelectorAll('a').forEach(function (elem) { elem.classList.remove('active'); });
             document.getElementById(id).classList.add('active');
         }
 
         // Tool button event handlers that set the new active tool
-        document.getElementById('disable').addEventListener('click', function() {
+        document.getElementById('disable').addEventListener('click', function () {
             activate("disable");
             cornerstoneTools.textMarker.disable(element);
             return false;
         });
-        document.getElementById('enable').addEventListener('click', function() {
+        document.getElementById('enable').addEventListener('click', function () {
             activate("enable");
             cornerstoneTools.textMarker.enable(element);
             return false;
         });
-        document.getElementById('activate').addEventListener('click', function() {
+        document.getElementById('activate').addEventListener('click', function () {
             activate("activate");
             cornerstoneTools.textMarker.activate(element, 1);
             return false;
         });
-        document.getElementById('deactivate').addEventListener('click', function() {
+        document.getElementById('deactivate').addEventListener('click', function () {
             activate("deactivate");
             cornerstoneTools.textMarker.deactivate(element, 1);
             return false;
@@ -329,4 +326,5 @@
     });
 
 </script>
+
 </html>

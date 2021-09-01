@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <!-- support for mobile touch devices -->
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
@@ -8,44 +9,44 @@
     <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="../bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
-<div class="container">
-    <div class="page-header">
-        <h1>
-            unselectableOverlay/index.html
-        </h1>
-        <p>
-            This example demonstrates using HTML to make overlays on top of the image.
-            It also makes them unselectable using a Cornerstone Tools helper function.
-        </p>
-        <a href="../index.html">Go back to the Examples page</a>
-    </div>
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                unselectableOverlay/index.html
+            </h1>
+            <p>
+                This example demonstrates using HTML to make overlays on top of the image.
+                It also makes them unselectable using a Cornerstone Tools helper function.
+            </p>
+            <a href="../index.html">Go back to the Examples page</a>
+        </div>
 
-    <div class="row">
-        <div class="col-xs-6">
-            <div style="width:512px;height:512px;position:relative;display:inline-block;color:white;"
-                 class='cornerstone-enabled-image'>
+        <div class="row">
+            <div class="col-xs-6">
+                <div style="width:512px;height:512px;position:relative;display:inline-block;color:white;"
+                    class='cornerstone-enabled-image'>
 
-                <div id="dicomImage"
-                    style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
-                </div>
+                    <div id="dicomImage" style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
+                    </div>
 
-                <div id="topleft" class="overlay" style="position: absolute;top:0px; left:0px">
-                    Patient Name
-                </div>
-                <div id="topright" class="overlay" style="position: absolute;top:0px; right:0px">
-                    Hospital
-                </div>
-                <div id="bottomright" class="overlay" style="position: absolute;bottom:0px; right:0px">
-                    Zoom:
-                </div>
-                <div id="bottomleft" class="overlay" style="position: absolute;bottom:0px; left:0px">
-                    WW/WC:
+                    <div id="topleft" class="overlay" style="position: absolute;top:0px; left:0px">
+                        Patient Name
+                    </div>
+                    <div id="topright" class="overlay" style="position: absolute;top:0px; right:0px">
+                        Hospital
+                    </div>
+                    <div id="bottomright" class="overlay" style="position: absolute;bottom:0px; right:0px">
+                        Zoom:
+                    </div>
+                    <div id="bottomleft" class="overlay" style="position: absolute;bottom:0px; left:0px">
+                        WW/WC:
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body>
 
 <!-- include the cornerstone library -->
@@ -53,8 +54,8 @@
 <script src="../cornerstoneMath.min.js"></script>
 
 <!-- include the cornerstone tools library -->
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
@@ -66,7 +67,7 @@
 
     // load the image and display it
     const imageId = 'example://1';
-    cornerstone.loadImage(imageId).then(function(image) {
+    cornerstone.loadImage(imageId).then(function (image) {
         cornerstone.displayImage(element, image);
 
         // enable mouse input
@@ -86,7 +87,7 @@
         }
 
         // update the overlay status
-        element.addEventListener('cornerstoneimagerendered', function(e) {
+        element.addEventListener('cornerstoneimagerendered', function (e) {
             const viewport = e.detail.viewport;
             const wwwc = Math.round(viewport.voi.windowWidth) + '/' + Math.round(viewport.voi.windowCenter);
             const zoom = viewport.scale + 'x';
@@ -96,4 +97,5 @@
     });
 
 </script>
+
 </html>

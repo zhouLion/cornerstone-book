@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <!-- support for mobile touch devices -->
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,62 +11,51 @@
     <link href="../cornerstone.min.css" rel="stylesheet">
 
 </head>
+
 <body>
-<div class="container">
-    <div class="page-header">
-        <h1>
-            WWWC Synchronizer Example
-        </h1>
-        <p>
-            This page contains an example of the ww/wc synchronizer tool
-        </p>
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                WWWC Synchronizer Example
+            </h1>
+            <p>
+                This page contains an example of the ww/wc synchronizer tool
+            </p>
 
-    </div>
-
-    <div class="row">
-        <div class="col-xs-2">
-            <ul class="list-group">
-                <a id="invert" class="list-group-item">Toggle Invert</a>
-                <a id="add" class="list-group-item active">Add All</a>
-                <a id="remove" class="list-group-item">Remove All</a>
-                <a id="add3" class="list-group-item">Add 3rd</a>
-                <a id="remove3" class="list-group-item">Remove 3rd</a>
-            </ul>
         </div>
-        <div class="col-xs-10">
-            <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
-                 oncontextmenu="return false"
-                 class='cornerstone-enabled-image'
-                 unselectable='on'
-                 onselectstart='return false;'
-                 onmousedown='return false;'>
-                <div id="axial1"
-                     style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
-                </div>
+
+        <div class="row">
+            <div class="col-xs-2">
+                <ul class="list-group">
+                    <a id="invert" class="list-group-item">Toggle Invert</a>
+                    <a id="add" class="list-group-item active">Add All</a>
+                    <a id="remove" class="list-group-item">Remove All</a>
+                    <a id="add3" class="list-group-item">Add 3rd</a>
+                    <a id="remove3" class="list-group-item">Remove 3rd</a>
+                </ul>
             </div>
-            <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
-                 oncontextmenu="return false"
-                 class='cornerstone-enabled-image'
-                 unselectable='on'
-                 onselectstart='return false;'
-                 onmousedown='return false;'>
-                <div id="axial2"
-                     style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
+            <div class="col-xs-10">
+                <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
+                    oncontextmenu="return false" class='cornerstone-enabled-image' unselectable='on'
+                    onselectstart='return false;' onmousedown='return false;'>
+                    <div id="axial1" style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
+                    </div>
                 </div>
-            </div>
-            <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
-                 oncontextmenu="return false"
-                 class='cornerstone-enabled-image'
-                 unselectable='on'
-                 onselectstart='return false;'
-                 onmousedown='return false;'>
-                <div id="axial3"
-                     style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
+                <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
+                    oncontextmenu="return false" class='cornerstone-enabled-image' unselectable='on'
+                    onselectstart='return false;' onmousedown='return false;'>
+                    <div id="axial2" style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
+                    </div>
+                </div>
+                <div style="width:256px;height:256px;position:relative;display:inline-block;color:white;"
+                    oncontextmenu="return false" class='cornerstone-enabled-image' unselectable='on'
+                    onselectstart='return false;' onmousedown='return false;'>
+                    <div id="axial3" style="width:256px;height:256px;top:0px;left:0px; position:absolute;">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body>
 
 <!-- include the cornerstone library -->
@@ -73,8 +63,8 @@
 <script src="../cornerstoneMath.min.js"></script>
 
 <!-- include the cornerstone tools library -->
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
@@ -91,15 +81,15 @@
     ]
 
     var axialStack1 = {
-        currentImageIdIndex : 0,
+        currentImageIdIndex: 0,
         imageIds: axialImageIds
     };
     var axialStack2 = {
-        currentImageIdIndex : 0,
+        currentImageIdIndex: 0,
         imageIds: axialImageIds
     };
     var axialStack3 = {
-        currentImageIdIndex : 0,
+        currentImageIdIndex: 0,
         imageIds: axialImageIds
     };
     var synchronizer = new cornerstoneTools.Synchronizer("cornerstoneimagerendered", cornerstoneTools.wwwcSynchronizer);
@@ -116,7 +106,7 @@
     cornerstoneTools.mouseInput.enable(axialElement3);
     cornerstoneTools.mouseWheelInput.enable(axialElement3);
 
-    cornerstone.loadImage(axialImageIds[0]).then(function(image) {
+    cornerstone.loadImage(axialImageIds[0]).then(function (image) {
         // display this image
         cornerstone.displayImage(axialElement1, image);
         cornerstone.displayImage(axialElement2, image);
@@ -141,12 +131,11 @@
         synchronizer.add(axialElement2);
         synchronizer.add(axialElement3);
 
-        function activate(id)
-        {
-            document.querySelectorAll('a').forEach(function(elem) { elem.classList.remove('active'); });
+        function activate(id) {
+            document.querySelectorAll('a').forEach(function (elem) { elem.classList.remove('active'); });
             document.getElementById(id).classList.add('active');
         }
-        document.getElementById('invert').addEventListener('click', function() {
+        document.getElementById('invert').addEventListener('click', function () {
             var viewport = cornerstone.getViewport(axialElement1);
             if (viewport.invert === true) {
                 viewport.invert = false;
@@ -158,26 +147,26 @@
             return false;
         });
 
-        document.getElementById('add').addEventListener('click', function() {
+        document.getElementById('add').addEventListener('click', function () {
             activate("add");
             synchronizer.add(axialElement1);
             synchronizer.add(axialElement2);
             synchronizer.add(axialElement3);
             return false;
         });
-        document.getElementById('remove').addEventListener('click', function() {
+        document.getElementById('remove').addEventListener('click', function () {
             activate("remove");
             synchronizer.remove(axialElement1);
             synchronizer.remove(axialElement2);
             synchronizer.remove(axialElement3);
             return false;
         });
-        document.getElementById('add3').addEventListener('click', function() {
+        document.getElementById('add3').addEventListener('click', function () {
             activate("add3");
             synchronizer.add(axialElement3);
             return false;
         });
-        document.getElementById('remove3').addEventListener('click', function() {
+        document.getElementById('remove3').addEventListener('click', function () {
             activate("remove3");
             synchronizer.remove(axialElement3);
             return false;
@@ -187,4 +176,5 @@
 
 
 </script>
+
 </html>

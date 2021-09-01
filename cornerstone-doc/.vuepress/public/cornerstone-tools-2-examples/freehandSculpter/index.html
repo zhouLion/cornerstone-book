@@ -1,77 +1,76 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-    <!-- support for mobile touch devices -->
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- support for mobile touch devices -->
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- twitter bootstrap CSS stylesheet - not required by cornerstoneTools -->
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- twitter bootstrap CSS stylesheet - not required by cornerstoneTools -->
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="../cornerstone.min.css" rel="stylesheet">
+  <link href="../cornerstone.min.css" rel="stylesheet">
 
 </head>
+
 <body>
-<div class="container">
+  <div class="container">
     <div class="page-header">
-        <h1>
-            Freehand Sculpting
-        </h1>
-        <p>
-            This page demonstrates how to sculpt a freehand ROI using freehandSculpter
-        </p>
-        <a href="../index.html">Go back to the Examples page</a>
+      <h1>
+        Freehand Sculpting
+      </h1>
+      <p>
+        This page demonstrates how to sculpt a freehand ROI using freehandSculpter
+      </p>
+      <a href="../index.html">Go back to the Examples page</a>
     </div>
 
     <br>
 
     <div class="row">
-        <div class="col-xs-2">
-            <ul class="list-group">
-                <a id="disable" class="list-group-item">Disable</a>
-                <a id="activate" class="list-group-item">Activate</a>
-            </ul>
-            <br/>
-            <ul class="col-xs-12 col-sm-2">
-                <div id="keyPressed">Holding:</div>
-            </ul>
-            <br/>
+      <div class="col-xs-2">
+        <ul class="list-group">
+          <a id="disable" class="list-group-item">Disable</a>
+          <a id="activate" class="list-group-item">Activate</a>
+        </ul>
+        <br />
+        <ul class="col-xs-12 col-sm-2">
+          <div id="keyPressed">Holding:</div>
+        </ul>
+        <br />
+      </div>
+      <div class="col-xs-10">
+        <div style="width:512px;height:512px;position:relative;display:inline-block;color:white;"
+          oncontextmenu="return false" class='cornerstone-enabled-image' unselectable='on' onselectstart='return false;'
+          onmousedown='return false;'>
+          <div id="dicomImage" style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
+          </div>
         </div>
-        <div class="col-xs-10">
-            <div style="width:512px;height:512px;position:relative;display:inline-block;color:white;"
-                 oncontextmenu="return false"
-                 class='cornerstone-enabled-image'
-                 unselectable='on'
-                 onselectstart='return false;'
-                 onmousedown='return false;'>
-                <div id="dicomImage"
-                     style="width:512px;height:512px;top:0px;left:0px; position:absolute;">
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
     <div class="row">
-        <div class="col-xs-12">
-            <h3>Functionality</h3>
-            <h4>Select ROI</h4>
-            <ul>
-                <li>Ctrl-click near a region of interest to select it for editing.</li>
-                <li>The region will become highlighted to show that it has been selected.</li>
-            </ul>
-            <h4>Edit ROI</h4>
-            <ul>
-                <li>Hold down left click near the selected tool to begin editing.</li>
-                <ul>
-                    <li>The closer to the contour the mouse is, the smaller the tool will be.</li>
-                    <li>The tool can push from either the inside or the outside.</li>
-                </ul>
-                <li>With the mouse held down, drag the tool to push the ROI.</li>
-                <ul>
-                    <li>New points will be created and deleted as needed.</li>
-                </ul>
-                <li>Release the mouse to complete the edit.</li>
-                <li>You may find you wish to make rough edits with a large tool, before making fine adjustments with a finer tool.</li>
-            </ul>
-        </div>
+      <div class="col-xs-12">
+        <h3>Functionality</h3>
+        <h4>Select ROI</h4>
+        <ul>
+          <li>Ctrl-click near a region of interest to select it for editing.</li>
+          <li>The region will become highlighted to show that it has been selected.</li>
+        </ul>
+        <h4>Edit ROI</h4>
+        <ul>
+          <li>Hold down left click near the selected tool to begin editing.</li>
+          <ul>
+            <li>The closer to the contour the mouse is, the smaller the tool will be.</li>
+            <li>The tool can push from either the inside or the outside.</li>
+          </ul>
+          <li>With the mouse held down, drag the tool to push the ROI.</li>
+          <ul>
+            <li>New points will be created and deleted as needed.</li>
+          </ul>
+          <li>Release the mouse to complete the edit.</li>
+          <li>You may find you wish to make rough edits with a large tool, before making fine adjustments with a finer
+            tool.</li>
+        </ul>
+      </div>
     </div>
 </body>
 
@@ -82,133 +81,132 @@
 
 
 <!-- include the cornerstone tools library -->
-<script src="../../dist/cornerstoneTools.js"></script>
-<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/cornerstone-tools">\x3C/script>')</script>
+<!--<script src="../../dist/cornerstoneTools.js"></script>-->
+<script>window.cornerstoneTools || document.write('<script src="https://unpkg.com/browse/cornerstone-tools@2.4.0/dist/cornerstoneTools.min.js">\x3C/script>')</script>
 
 <!-- include special code for these examples which provides images -->
 <script src="../exampleImageLoader.js"></script>
 
 <script>
-    var element = document.getElementById('dicomImage');
-    var imageId = 'example://1';
+  var element = document.getElementById('dicomImage');
+  var imageId = 'example://1';
 
-    const keyCodes = {
-        SHIFT: 16,
-        CTRL: 17,
-        ALT: 18
-    };
+  const keyCodes = {
+    SHIFT: 16,
+    CTRL: 17,
+    ALT: 18
+  };
 
-    const config = {
-      ctrl: false,
-      shift: false,
-      alt: false
-    };
+  const config = {
+    ctrl: false,
+    shift: false,
+    alt: false
+  };
 
-    function onKeyDown(e) {
-      const data = e.detail;
-      const keyCode = data.keyCode;
+  function onKeyDown(e) {
+    const data = e.detail;
+    const keyCode = data.keyCode;
 
-      if (keyCode === keyCodes.CTRL) {
-        config.ctrl = true;
-      } else if (keyCode === keyCodes.SHIFT) {
-        config.shift = true;
-      } else if (keyCode === keyCodes.ALT) {
-        config.alt = true;
-      }
-
-      let keyName = '';
-
-      if (config.ctrl) {
-        keyName += ' Ctrl';
-      }
-      if (config.shift) {
-        keyName += ' Shift';
-      }
-      if (config.alt) {
-        keyName += ' Alt';
-      }
-
-      document.getElementById('keyPressed').textContent = "Holding:" + keyName;
+    if (keyCode === keyCodes.CTRL) {
+      config.ctrl = true;
+    } else if (keyCode === keyCodes.SHIFT) {
+      config.shift = true;
+    } else if (keyCode === keyCodes.ALT) {
+      config.alt = true;
     }
 
-    function onKeyUp(e) {
-      const data = e.detail;
-      const keyCode = data.keyCode;
+    let keyName = '';
 
-      if (keyCode === keyCodes.CTRL) {
-        config.ctrl = false;
-      } else if (keyCode === keyCodes.SHIFT) {
-        config.shift = false;
-      } else if (keyCode === keyCodes.ALT) {
-        config.alt = false;
-      }
-
-      let keyName = '';
-
-      if (config.ctrl) {
-        keyName += ' Ctrl';
-      }
-      if (config.shift) {
-        keyName += ' Shift';
-      }
-      if (config.alt) {
-        keyName += ' Alt';
-      }
-
-      document.getElementById('keyPressed').textContent = "Holding:" + keyName;
+    if (config.ctrl) {
+      keyName += ' Ctrl';
+    }
+    if (config.shift) {
+      keyName += ' Shift';
+    }
+    if (config.alt) {
+      keyName += ' Alt';
     }
 
-    element.tabIndex = 0;
+    document.getElementById('keyPressed').textContent = "Holding:" + keyName;
+  }
+
+  function onKeyUp(e) {
+    const data = e.detail;
+    const keyCode = data.keyCode;
+
+    if (keyCode === keyCodes.CTRL) {
+      config.ctrl = false;
+    } else if (keyCode === keyCodes.SHIFT) {
+      config.shift = false;
+    } else if (keyCode === keyCodes.ALT) {
+      config.alt = false;
+    }
+
+    let keyName = '';
+
+    if (config.ctrl) {
+      keyName += ' Ctrl';
+    }
+    if (config.shift) {
+      keyName += ' Shift';
+    }
+    if (config.alt) {
+      keyName += ' Alt';
+    }
+
+    document.getElementById('keyPressed').textContent = "Holding:" + keyName;
+  }
+
+  element.tabIndex = 0;
+  element.focus();
+
+  element.addEventListener("cornerstonetoolskeydown", onKeyDown);
+  element.addEventListener("cornerstonetoolskeyup", onKeyUp);
+
+  cornerstoneTools.toolStyle.setToolWidth(3);
+  cornerstoneTools.toolColors.setToolColor("#ffcc33");
+  cornerstoneTools.toolColors.setActiveColor("#0099ff");
+  cornerstoneTools.toolColors.setFillColor("#0099ff");
+
+  // image enable the dicomImage element
+  cornerstone.enable(element);
+  cornerstoneTools.keyboardInput.enable(element);
+  cornerstoneTools.mouseInput.enable(element);
+  cornerstone.loadImage(imageId).then(function (image) {
+    cornerstone.displayImage(element, image);
+
+    // Enable all tools we want to use with this element
+    cornerstoneTools.freehand.enable(element);
+    // Load 2 example tools from JSON.
+    cornerstoneTools.addToolState(element, 'freehand', getExampleRoi1());
+    cornerstoneTools.addToolState(element, 'freehand', getExampleRoi2());
+
+    activate("activate");
+    cornerstoneTools.freehandSculpter.activate(element, 1);
     element.focus();
 
-    element.addEventListener("cornerstonetoolskeydown", onKeyDown);
-    element.addEventListener("cornerstonetoolskeyup", onKeyUp);
+    function activate(id) {
+      document.querySelectorAll('a').forEach(function (elem) { elem.classList.remove('active'); });
+      document.getElementById(id).classList.add('active');
+    }
 
-    cornerstoneTools.toolStyle.setToolWidth(3);
-    cornerstoneTools.toolColors.setToolColor("#ffcc33");
-    cornerstoneTools.toolColors.setActiveColor("#0099ff");
-    cornerstoneTools.toolColors.setFillColor("#0099ff");
-
-    // image enable the dicomImage element
-    cornerstone.enable(element);
-    cornerstoneTools.keyboardInput.enable(element);
-    cornerstoneTools.mouseInput.enable(element);
-    cornerstone.loadImage(imageId).then(function(image) {
-        cornerstone.displayImage(element, image);
-
-        // Enable all tools we want to use with this element
-        cornerstoneTools.freehand.enable(element);
-        // Load 2 example tools from JSON.
-        cornerstoneTools.addToolState(element, 'freehand', getExampleRoi1());
-        cornerstoneTools.addToolState(element, 'freehand', getExampleRoi2());
-
-        activate("activate");
-        cornerstoneTools.freehandSculpter.activate(element, 1);
-        element.focus();
-
-        function activate(id)
-        {
-            document.querySelectorAll('a').forEach(function(elem) { elem.classList.remove('active'); });
-            document.getElementById(id).classList.add('active');
-        }
-
-        // Tool button event handlers that set the new active tool
-        document.getElementById('disable').addEventListener('click', function() {
-            activate("disable");
-            cornerstoneTools.freehandSculpter.disable(element);
-            element.focus();
-            return false;
-        });
-        document.getElementById('activate').addEventListener('click', function() {
-            activate("activate");
-            cornerstoneTools.freehandSculpter.activate(element, 1);
-            element.focus();
-            return false;
-        });
+    // Tool button event handlers that set the new active tool
+    document.getElementById('disable').addEventListener('click', function () {
+      activate("disable");
+      cornerstoneTools.freehandSculpter.disable(element);
+      element.focus();
+      return false;
     });
+    document.getElementById('activate').addEventListener('click', function () {
+      activate("activate");
+      cornerstoneTools.freehandSculpter.activate(element, 1);
+      element.focus();
+      return false;
+    });
+  });
 
-    function getExampleRoi1() {
-      const exampleRoiJSON =
+  function getExampleRoi1() {
+    const exampleRoiJSON =
       '{"visible":true,"active":false,"invalidated":true,"handles":[{"x":158.25,"y":92.19999694824219,"highlight":true,"active":false,"lines":[{"x":153.25,"y":91.19999694824219}]},'
       + '{"x":153.25,"y":91.19999694824219,"highlight":true,"active":false,"lines":[{"x":147,"y":92.19999694824219}]},'
       + '{"x":147,"y":92.19999694824219,"highlight":true,"active":false,"lines":[{"x":141.5,"y":94.69999694824219}]},'
@@ -244,12 +242,12 @@
       + '"polyBoundingBox":{"left":130.75,"top":91.19999694824219,"width":45.5,"height":67.05000305175781},'
       + '"meanStdDev":{"count":1856,"mean":148.21713362068965,"variance":568.0859348873164,"stdDev":23.834553381326792},"area":1540.7742500305176}';
 
-      return JSON.parse(exampleRoiJSON);
-    }
+    return JSON.parse(exampleRoiJSON);
+  }
 
 
-    function getExampleRoi2() {
-      const exampleRoiJSON =
+  function getExampleRoi2() {
+    const exampleRoiJSON =
       '{"visible":true,"active":false,"invalidated":true,"handles":[{"x":96.5,"y":191.06666564941406,"highlight":true,"active":true,"lines":[{"x":91.5,"y":191.06666564941406}]},\
       {"x":91.5,"y":191.06666564941406,"highlight":true,"active":true,"lines":[{"x":87.5,"y":187.56666564941406}]},\
       {"x":87.5,"y":187.56666564941406,"highlight":true,"active":true,"lines":[{"x":87.5,"y":182.56666564941406}]},\
@@ -338,8 +336,9 @@
       "active":true,"lines":[{"x":91.5,"y":191.06666564941406}]}]}],"textBox":{"active":false,"hasMoved":false,"movesIndependently":false,\
       "drawnIndependently":true,"allowedOutsideImage":true,"hasBoundingBox":true},"canComplete":false,"highlight":false}';
 
-      return JSON.parse(exampleRoiJSON);
-    }
+    return JSON.parse(exampleRoiJSON);
+  }
 
 </script>
+
 </html>
