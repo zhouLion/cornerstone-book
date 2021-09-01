@@ -1,61 +1,32 @@
 # Cornerstone Tools v3
 
-- [Release Notes](https://github.com/cornerstonejs/cornerstoneTools/releases)
-- [Examples](https://tools.cornerstonejs.org/examples)
+- [发布通知](https://github.com/cornerstonejs/cornerstoneTools/releases)
+- [示例](https://tools.cornerstonejs.org/examples)
 
-## Essentials
+## 概要
 
-- [Installation](installation.md)
-- [Introduction](index.md)
-  - [What is CornerstoneTools.js?](index.md#what-is-cornerstone-tools-js)
-  - [Getting Started](index.md#getting-started)
-  - [Configuration](index.md#configuration)
-  - [Adding and Using Tools](index.md#adding-and-using-tools)
-  - [Next Steps](index.md#next-steps)
-- [Debugging](debugging/index.md)
-- [Contributing](contributing.md)
+- [安装](installation.md)
+- [介绍](index.md)
+- [调试](debugging/index.md)
+- [贡献](contributing.md)
 
-## Tools In-Depth
+## 深入了解
 
-- [Anatomy of a Tool](anatomy-of-a-tool/index.md)
-  - [Modes](anatomy-of-a-tool/index.md#modes)
-  - [Configuration](anatomy-of-a-tool/index.md#configuration)
-  - [Interaction Types](anatomy-of-a-tool/index.md#interaction-types)
-  - [Strategies](anatomy-of-a-tool/index.md#strategies)
-  - [Mixins](anatomy-of-a-tool/index.md#mixins)
-  - [Measurement Data](anatomy-of-a-tool/index.md#measurement-data)
-- [Tool Types](tool-types/index.md)
-  - [Base Tool](tool-types/index.md#base-tool)
-  - [Base Annotation Tool](tool-types/index.md#base-annotation-tool)
-  - [Base Brush Tool](tool-types/index.md#base-brush-tool)
-  - [Segmentation Tool](tool-types/index.md#segmentation-tool)
-- [Tool Mixins](tool-mixins/index.md)
-  - [Binary Tools](tool-mixins/index.md#binary-tools)
-  - [Segmentation Mixins](tool-mixins/index.md#segmentation-mixins)
-- [Custom Tools](custom-tools/index.md)
-  - [Choosing a Base Class](custom-tools/index.md#choosing-a-base-class)
-  - [Creating your Tool](custom-tools/index.md#creating-your-tool)
-  - [Adding Mixins](custom-tools/index.md#adding-mixins)
-  - [Mode Change Callbacks](custom-tools/index.md#mode-change-callbacks)
-  - [Event Dispatcher Callbacks](custom-tools/index.md#event-dispatcher-callbacks)
-- [Modules](modules/index.md)
-  - [GlobalConfiguration](modules/index.md#global-configuration)
-  - [Cursor](modules/index.md#cursors)
-  - [Segmentation](modules/index.md#segmentation)
-- [Third-Party Functionality](third-party-functionality/index.md)
-  - [Item Types](third-party-functionality/index.md#item-types)
-  - [Registration](third-party-functionality/index.md#registration)
-  - [Imports](third-party-functionality/index.md#imports)
-  - [Tools](third-party-functionality/index.md#tools)
+- [工具内部结构](anatomy-of-a-tool/index.md)
+- [工具的类型](tool-types/index.md)
+- [工具混入](tool-mixins/index.md)
+- [自定义工具](custom-tools/index.md)
+- [模块](modules/index.md)
+- [第三方功能](third-party-functionality/index.md)
 
-## Migrating
+## 迁移
 
-- [Migration from 2.x](migration/index.md#2x)
-- [Migration from 1.x](migration/index.md#1x)
+- [从 2.x 迁移](migration/index.md#2x)
+- [从 1.x 迁移](migration/index.md#1x)
 
-## Misc
+## 杂项
 
-- [Debugging](debugging/index.md)
+- [调试](debugging/index.md)
 - <a href="/cornerstone-book/cornerstone-tools/latest/api">API</a>
-- 3rd Party Tool Directory _coming soon_
-- Custom Tool Example Repositories _coming soon_
+- 第三方工具库 *即将到来*
+- 自定义工具代码仓库 *即将到来*

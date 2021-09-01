@@ -99,7 +99,7 @@ cornerstoneTools.setToolActive('ToolName', { mouseButtonMask: 2 });
 
 | Argument | Type | Description |
 |----------|------|-------------|
-| strategies | Object |一种“Object”，由“function”组成，以“evt”和“configuration”作为参数并执行操作。
+| strategies | Object |一种 `Object` ，由 `function` 组成，以 `evt` 和 `configuration` 作为参数并执行操作。
 | defaultStrategy | string | 要应用的默认策略的名称。名称应与“strategies”中的属性名称相同。|
 
 在实例化该工具时，`activeStrategy` 设置为 `defaultStrategy` 。如果没有 `defaultStrategy` ，则使用 `strategies` 的第一个函数。策略机制是完全可选的。
