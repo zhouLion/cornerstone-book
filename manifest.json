@@ -1,0 +1,20 @@
+{
+    "name": "Cornerstone 小册",
+    "short_name": "Cornerstone",
+    "icons": [
+        {
+            "src": "/cornerstone-book/icons/logo192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/cornerstone-book/icons/logo512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/cornerstone-book/zh/index.html",
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color": "#3eaf7c"
+}
